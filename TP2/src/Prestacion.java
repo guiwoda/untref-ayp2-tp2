@@ -1,7 +1,6 @@
 import java.sql.Date;
 
 public abstract class Prestacion {
-
 	private String nombre;
 	private Date fecha;
 	private Integer id;
