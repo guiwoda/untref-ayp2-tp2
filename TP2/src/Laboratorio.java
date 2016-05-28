@@ -9,14 +9,16 @@ public class Laboratorio {
 	//para estadistica
 	private TreeMap <String, Prestacion> estudios;
 	
-	//En los parametros me parece que va directo la info id y nombre y no ya un paciente
-	public void ingresoPaciente(Paciente paciente){
-			if (!pacientes.contains(paciente)){
-				//aca deberiamos crear un paciente y no recibirlo por parametro
-				pacientes.add(paciente);
-			}
-			//lo hace siempre sea nuevo o paciente existente
-			//registrarVisita(Paciente paciente, Date fecha, Prestacion[] prestaciones);
+	//Dos metodos para ingreso paciente de acuerdo si existe o no
+	public void ingresoPacienteNuevo(String nombre, Integer dni, Integer telefono, String mail){
+			
+			Paciente paciente = new Paciente(nombre, dni, telefono, mail);
+			pacientes.add(paciente);
+			//registrarVisita(paciente, Date fecha, Prestacion[] prestaciones);
+	}
+	
+	public void ingresoPacienteExistente(Paciente paciente){
+		//registrarVisita(Paciente paciente, Date fecha, Prestacion[] prestaciones);
 	}
 	
 	public void registrarVisita(Paciente paciente, Date fecha, Prestacion[] prestaciones){

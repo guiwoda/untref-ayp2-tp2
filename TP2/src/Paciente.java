@@ -10,8 +10,8 @@ public class Paciente {
 	private Prestacion[] prestaciones;
 	
 	
-	public Paciente(Integer id, String nombre, Integer telefono, Integer dni, String mail){
-		this.id=id;
+	public Paciente(String nombre, Integer telefono, Integer dni, String mail){
+		this.id=id++;
 		this.nombre=nombre;
 		this.telefono=telefono;
 		this.dni=dni;

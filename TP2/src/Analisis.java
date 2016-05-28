@@ -9,10 +9,6 @@ public class Analisis extends Prestacion {
 	private String indicaciones;
 	// no sabemos todavia
 	private Date fecha;
-	// A revisar
-	private Resultado resultado;
-	// A ver
-	private String normalidad;
 
 	public Analisis(Integer id, String nombre, Integer valorNormalMinimo, Integer valorNormalMaximo, String indicaciones){
 		super.setId(id);
@@ -23,18 +19,18 @@ public class Analisis extends Prestacion {
 	} 
 	
 	public void evaluarNormalidad() {
-		if ((resultado.getValorMedido() < this.valorNormalMaximo)
-				&& (resultado.getValorMedido() > this.valorNormalMinimo)) {
-			normalidad = "normal";
+		if ((getResultado().getValorMedido() < this.valorNormalMaximo)
+				&& (getResultado().getValorMedido() > this.valorNormalMinimo)) {
+			super.setNormalidad("normal");
 		} else {
-			normalidad = "anormal";
+			super.setNormalidad("anormal");
 		}
 	}
 
 	// Para mostrar resultados
 	public String toString() {
 		// Falta inicializar normalidad
-		return  " " + resultado.getValorMedido().toString() + " " + this.normalidad
+		return  super.getNombre() + " " + getResultado().getValorMedido().toString() + " " + super.getNormalidad()
 				+ " dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  "
 				+ this.valorNormalMaximo.toString();
 	}

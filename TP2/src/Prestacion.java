@@ -4,6 +4,8 @@ public abstract class Prestacion {
 	private String nombre;
 	private Date fecha;
 	private Integer id;
+	private Resultado resultado;
+	private String normalidad;
 		
 	public String toString(){
 		return getNombre();
@@ -25,6 +27,24 @@ public abstract class Prestacion {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	public String getNormalidad() {
+		return normalidad;
+	}
+
+	public void setNormalidad(String normalidad) {
+		this.normalidad = normalidad;
+	}
+
+	public Resultado getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(Resultado resultado) {
+		this.resultado = resultado;
+	}
+	
+
 		
 	//aca me falta el visitor pero no se como se escribe. Invento el nombre
 	//public Prestacion esVisitado(Estadistico estadistico){
