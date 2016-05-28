@@ -4,6 +4,7 @@ public abstract class Estudio extends Prestacion {
 	private String nombre;
 	private String indicaciones;
 	
+	
 	public Estudio(String nombre, String indicaciones) {
 		this.nombre = nombre;
 		this.indicaciones = indicaciones;
