@@ -2,8 +2,6 @@ import java.sql.Date;
 
 public class Analisis extends Prestacion {
 
-	//private Integer id;
-	//private String nombre;
 	private Integer valorNormalMinimo;
 	private Integer valorNormalMaximo;
 	private String indicaciones;
@@ -18,19 +16,19 @@ public class Analisis extends Prestacion {
 		this.indicaciones=indicaciones;
 	} 
 	
-	public void evaluarNormalidad() {
+	public String evaluarNormalidad() {
 		if ((getResultado().getValorMedido() < this.valorNormalMaximo)
 				&& (getResultado().getValorMedido() > this.valorNormalMinimo)) {
-			super.setNormalidad("normal");
+			return "normal";
 		} else {
-			super.setNormalidad("anormal");
+			return "anormal";
 		}
 	}
 
 	// Para mostrar resultados
 	public String toString() {
 		// Falta inicializar normalidad
-		return  super.getNombre() + " " + getResultado().getValorMedido().toString() + " " + super.getNormalidad()
+		return  super.getNombre() + " " + getResultado().getValorMedido().toString() + " " + this.evaluarNormalidad()
 				+ " dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  "
 				+ this.valorNormalMaximo.toString();
 	}

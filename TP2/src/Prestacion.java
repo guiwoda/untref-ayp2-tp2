@@ -5,11 +5,10 @@ public abstract class Prestacion {
 	private Date fecha;
 	private Integer id;
 	private Resultado resultado;
-	private String normalidad;
-		
+	
+	
 	public String toString(){
-		return getNombre();
-		
+		return getNombre();	
 	}
 
 	public String getNombre() {
@@ -26,14 +25,6 @@ public abstract class Prestacion {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getNormalidad() {
-		return normalidad;
-	}
-
-	public void setNormalidad(String normalidad) {
-		this.normalidad = normalidad;
 	}
 
 	public Resultado getResultado() {
