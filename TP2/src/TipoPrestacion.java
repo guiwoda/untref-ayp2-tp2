@@ -1,6 +1,9 @@
+import java.util.List;
+
 public abstract class TipoPrestacion {
 	protected Integer id;
 	protected String nombre;
+	protected List<Prestacion> prestaciones;
 	
 	public TipoPrestacion(int id, String nombre) {
 		this.id = id;
@@ -25,6 +28,10 @@ public abstract class TipoPrestacion {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public void addPrestacion(Prestacion prestacion) {
+		this.prestaciones.add(prestacion);
 	}
 	
 	abstract public String mostrar(Resultado resultado);

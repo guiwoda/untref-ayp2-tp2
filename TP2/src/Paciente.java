@@ -1,6 +1,7 @@
 
 public class Paciente {
-
+	private static Integer lastId = 0;
+	
 	private Integer id;
 	private String nombre;
 	private Integer telefono;
@@ -11,11 +12,11 @@ public class Paciente {
 	
 	
 	public Paciente(String nombre, Integer telefono, Integer dni, String mail){
-		this.id=id++;
-		this.nombre=nombre;
-		this.telefono=telefono;
-		this.dni=dni;
-		this.mail=mail;
+		this.id = ++lastId;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.dni = dni;
+		this.mail = mail;
 	}
 	
 	public void actualizarDatos(String nombre, Integer telefono, Integer dni, String mail){
@@ -30,4 +31,7 @@ public class Paciente {
 		return (this.id == pacienteAComparar.id);
 	}
 	
+	public Integer getId() {
+		return id;
+	}
 }

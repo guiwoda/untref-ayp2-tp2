@@ -1,24 +1,28 @@
-import java.sql.Date;
+import java.util.Date;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class Laboratorio {
 	
 	//para llevar listado de Pacientes
-	private TreeSet <Paciente> pacientes;
+	private TreeMap<Integer, Paciente> pacientes;
 	//para estadistica
-	private TreeMap <String, TipoPrestacion> estudios;
+	private TreeMap<String, TipoPrestacion> estudios;
 	
 	//Dos metodos para ingreso paciente de acuerdo si existe o no
-	public void ingresoPacienteNuevo(String nombre, Integer dni, Integer telefono, String mail){
-			
+	public void ingresoPaciente(String nombre, Integer dni, Integer telefono, String mail, TipoPrestacion[] prestaciones){
 			Paciente paciente = new Paciente(nombre, dni, telefono, mail);
-			pacientes.add(paciente);
+			
+			pacientes.put(paciente.getId(), paciente);
+			
 			//registrarVisita(paciente, Date fecha, Prestacion[] prestaciones);
 	}
 	
-	public void ingresoPacienteExistente(Paciente paciente){
-		//registrarVisita(Paciente paciente, Date fecha, Prestacion[] prestaciones);
+	public void ingresoPaciente(Integer id, String nombre, Integer dni, Integer telefono, String mail, TipoPrestacion[] prestaciones){
+		Paciente paciente = pacientes.get(id);
+		
+		paciente.actualizarDatos(nombre, telefono, dni, mail);
+		
+		registrarVisita(paciente, new Date(), prestaciones);
 	}
 	
 	public void registrarVisita(Paciente paciente, Date fecha, TipoPrestacion[] prestaciones){
