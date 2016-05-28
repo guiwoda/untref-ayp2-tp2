@@ -14,7 +14,7 @@ public class Laboratorio {
 			
 			pacientes.put(paciente.getId(), paciente);
 			
-			//registrarVisita(paciente, Date fecha, Prestacion[] prestaciones);
+			registrarVisita(paciente, new Date(), prestaciones);
 	}
 	
 	public void ingresoPaciente(Integer id, String nombre, Integer dni, Integer telefono, String mail, TipoPrestacion[] prestaciones){
@@ -26,7 +26,10 @@ public class Laboratorio {
 	}
 	
 	public void registrarVisita(Paciente paciente, Date fecha, TipoPrestacion[] prestaciones){
-		
+		for (TipoPrestacion tipo : prestaciones) {
+			Prestacion prestacion = new Prestacion(tipo, paciente, fecha);
+			
+		}
 	}
 	
 	public void estadistica(){
