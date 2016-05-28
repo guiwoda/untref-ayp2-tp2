@@ -1,13 +1,12 @@
 import java.sql.Date;
 
-public class Prestacion {
+public abstract class Prestacion {
 
-	private String Nombre;
+	private String nombre;
 	private Date fecha;
 		
-	
 	public String toString(){
-		return Nombre;
+		return nombre;
 		
 	}
 		

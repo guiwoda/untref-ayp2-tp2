@@ -1,14 +1,15 @@
-import java.sql.Date;
+
 
 public class EstudioCardiologico extends Estudio{
 
-	private String Nombre;
-	private Date fecha;
 	
-	
-	
+	public EstudioCardiologico(String nombre, String indicaciones) {
+		super(nombre, indicaciones);
+		// TODO Apéndice de constructor generado automáticamente
+	}
+
 	public String toString(){
-		return Nombre;
+		return getNombre();
 		
 	}
 	

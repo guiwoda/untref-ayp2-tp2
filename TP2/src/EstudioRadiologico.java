@@ -1,14 +1,14 @@
-import java.sql.Date;
+
 
 public class EstudioRadiologico extends Estudio{
 
-	private String Nombre;
-	private Date fecha;
-	
-	
+	public EstudioRadiologico(String nombre, String indicaciones) {
+		super(nombre, indicaciones);
+		// TODO Apéndice de constructor generado automáticamente
+	}
 	
 	public String toString(){
-		return Nombre;
+		return super.getNombre();
 		
 	}
 	
