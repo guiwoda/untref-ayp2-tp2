@@ -1,18 +1,16 @@
 
-
 public abstract class Estudio extends Prestacion {
 
 	private String nombre;
 	private String indicaciones;
 	
-	public Estudio (String nombre,String indicaciones){
+	public Estudio(String nombre, String indicaciones) {
 		this.nombre = nombre;
 		this.indicaciones = indicaciones;
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return getNombre();
-		
 	}
 
 	public String getNombre() {
@@ -22,5 +20,5 @@ public abstract class Estudio extends Prestacion {
 	public String getIndicaciones() {
 		return indicaciones;
 	}
-	
+
 }
