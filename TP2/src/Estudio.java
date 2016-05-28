@@ -3,7 +3,7 @@ public abstract class Estudio extends Prestacion {
 
 	private String nombre;
 	private String indicaciones;
-	
+	protected ResultadoEstudio resultado;
 	
 	public Estudio(String nombre, String indicaciones) {
 		this.nombre = nombre;

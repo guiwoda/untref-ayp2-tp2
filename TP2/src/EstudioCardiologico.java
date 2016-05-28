@@ -1,5 +1,4 @@
 
-
 public class EstudioCardiologico extends Estudio{
 
 	
@@ -8,7 +7,7 @@ public class EstudioCardiologico extends Estudio{
 	}
 
 	public String toString(){
-		return getId() + " " + getNombre() + " " + getIndicaciones() + " "; //falta normalidad
+		return getId() + " " + getNombre() + " " + getIndicaciones() + " " + resultado.evaluarNormalidad(); //falta normalidad
 		
 	}
 	
