@@ -5,6 +5,7 @@ public class Analisis extends Prestacion {
 	private Integer valorNormalMinimo;
 	private Integer valorNormalMaximo;
 	private String indicaciones;
+	private ResultadoAnalisis resultado;
 	// no sabemos todavia
 	private Date fecha;
 
@@ -15,20 +16,19 @@ public class Analisis extends Prestacion {
 		this.valorNormalMaximo=valorNormalMaximo;
 		this.indicaciones=indicaciones;
 	} 
-	
-	public String evaluarNormalidad() {
-		if ((getResultado().getValorMedido() < this.valorNormalMaximo)
-				&& (getResultado().getValorMedido() > this.valorNormalMinimo)) {
-			return "normal";
-		} else {
-			return "anormal";
-		}
-	}
 
+	public Integer getValorNormalMinimo(){
+		return this.valorNormalMinimo;
+	}
+	
+	public Integer getValorNormalMaximo(){
+		return this.valorNormalMaximo;
+	}
+	
 	// Para mostrar resultados
 	public String toString() {
 		// Falta inicializar normalidad
-		return  super.getNombre() + " " + getResultado().getValorMedido().toString() + " " + this.evaluarNormalidad()
+		return  super.getNombre() + " " + resultado.getValorMedido().toString() + " " + resultado.evaluarNormalidad()
 				+ " dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  "
 				+ this.valorNormalMaximo.toString();
 	}

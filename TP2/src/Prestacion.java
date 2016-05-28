@@ -4,7 +4,6 @@ public abstract class Prestacion {
 	private String nombre;
 	private Date fecha;
 	private Integer id;
-	private Resultado resultado;
 	
 	
 	public String toString(){
@@ -27,16 +26,6 @@ public abstract class Prestacion {
 		this.id = id;
 	}
 
-	public Resultado getResultado() {
-		return resultado;
-	}
-
-	public void setResultado(Resultado resultado) {
-		this.resultado = resultado;
-	}
-	
-
-		
 	//aca me falta el visitor pero no se como se escribe. Invento el nombre
 	//public Prestacion esVisitado(Estadistico estadistico){
 		
