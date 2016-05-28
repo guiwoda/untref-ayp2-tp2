@@ -10,8 +10,9 @@ public class Prestacion {
 		return Nombre;
 		
 	}
-	
-	
-	//aca me falta el visitor pero no se como se escribe.
-	
+		
+	//aca me falta el visitor pero no se como se escribe. Invento el nombre
+	//public Prestacion esVisitado(Estadistico estadistico){
+		
+	//}
 }
