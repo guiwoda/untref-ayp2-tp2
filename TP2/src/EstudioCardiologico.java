@@ -9,7 +9,7 @@ public class EstudioCardiologico extends Estudio{
 	}
 
 	public String toString(){
-		return getId() + " " + getNombre() + " " + getIndicaciones() + " " + getNormalidad();
+		return getId() + " " + getNombre() + " " + getIndicaciones() + " "; //falta normalidad
 		
 	}
 	
