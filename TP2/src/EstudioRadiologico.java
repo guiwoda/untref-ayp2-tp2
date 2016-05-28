@@ -6,4 +6,10 @@ public class EstudioRadiologico extends Estudio {
 	public String toString(){
 		return nombre;
 	}
+
+	@Override
+	public String mostrar(Resultado resultado) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
