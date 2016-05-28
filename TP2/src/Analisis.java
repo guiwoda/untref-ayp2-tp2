@@ -24,9 +24,16 @@ public class Analisis extends Prestacion {
 	}
 
 	// Para mostrar resultados
-	public String toString(){
-		//Falta inicializar normalidad
-		return nombre + " " + " " +  resultado.getValorMedido().toString() + " " + this.normalidad + "dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  " + this.valorNormalMaximo.toString();
+	public String toString() {
+		// Falta inicializar normalidad
+		return nombre + " " + resultado.getValorMedido().toString() + " " + this.normalidad
+				+ " dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  "
+				+ this.valorNormalMaximo.toString();
 	}
 
+	// Para la estadistica
+	// aca me falta el visitor pero no se como se escribe. Invento el nombre
+	public Prestacion esVisitado(Estadistico estadistico) {
+		return this;
+	}
 }
