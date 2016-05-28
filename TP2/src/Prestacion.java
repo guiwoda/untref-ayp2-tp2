@@ -4,6 +4,7 @@ public abstract class Prestacion {
 
 	private String nombre;
 	private Date fecha;
+	private Integer id;
 		
 	public String toString(){
 		return nombre;

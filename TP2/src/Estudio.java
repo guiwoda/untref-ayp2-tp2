@@ -1,11 +1,9 @@
-import java.sql.Date;
+
 
 public abstract class Estudio extends Prestacion {
 
 	private String nombre;
-	private Date fecha;
 	private String indicaciones;
-	private Integer id;
 	
 	public Estudio (String nombre,String indicaciones){
 		this.nombre = nombre;

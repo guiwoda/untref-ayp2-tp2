@@ -13,7 +13,9 @@ public class Analisis extends Prestacion {
 	private Resultado resultado;
 	// A ver
 	private String normalidad;
-
+	
+	
+	
 	public void evaluarNormalidad() {
 		if ((resultado.getValorMedido() < this.valorNormalMaximo)
 				&& (resultado.getValorMedido() > this.valorNormalMinimo)) {
