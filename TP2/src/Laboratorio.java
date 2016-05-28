@@ -7,7 +7,7 @@ public class Laboratorio {
 	//para llevar listado de Pacientes
 	private TreeSet <Paciente> pacientes;
 	//para estadistica
-	private TreeMap <String, Prestacion> estudios;
+	private TreeMap <String, TipoPrestacion> estudios;
 	
 	//Dos metodos para ingreso paciente de acuerdo si existe o no
 	public void ingresoPacienteNuevo(String nombre, Integer dni, Integer telefono, String mail){
@@ -21,7 +21,7 @@ public class Laboratorio {
 		//registrarVisita(Paciente paciente, Date fecha, Prestacion[] prestaciones);
 	}
 	
-	public void registrarVisita(Paciente paciente, Date fecha, Prestacion[] prestaciones){
+	public void registrarVisita(Paciente paciente, Date fecha, TipoPrestacion[] prestaciones){
 		
 	}
 	

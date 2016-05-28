@@ -1,21 +1,16 @@
-import java.sql.Date;
-
-public class Analisis extends Prestacion {
+public class Analisis extends TipoPrestacion {
 
 	private Integer valorNormalMinimo;
 	private Integer valorNormalMaximo;
 	private String indicaciones;
-	private ResultadoAnalisis resultado;
-	// no sabemos todavia
-	private Date fecha;
 
-	public Analisis(Integer id, String nombre, Integer valorNormalMinimo, Integer valorNormalMaximo, String indicaciones){
-		super.setId(id);
-		super.setNombre(nombre);
-		this.valorNormalMinimo=valorNormalMinimo;
-		this.valorNormalMaximo=valorNormalMaximo;
-		this.indicaciones=indicaciones;
-	} 
+	public Analisis(int id, String nombre, Integer valorNormalMinimo, Integer valorNormalMaximo, String indicaciones){
+		super(id, nombre);
+		
+		this.valorNormalMinimo = valorNormalMinimo;
+		this.valorNormalMaximo = valorNormalMaximo;
+		this.indicaciones = indicaciones;
+	}
 
 	public Integer getValorNormalMinimo(){
 		return this.valorNormalMinimo;
@@ -26,16 +21,15 @@ public class Analisis extends Prestacion {
 	}
 	
 	// Para mostrar resultados
-	public String toString() {
-		// Falta inicializar normalidad
-		return  super.getNombre() + " " + resultado.getValorMedido().toString() + " " + resultado.evaluarNormalidad()
+	public String mostrar(Resultado resultado) {
+		return  nombre + " " + resultado.toString()
 				+ " dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  "
 				+ this.valorNormalMaximo.toString();
 	}
 
 	// Para la estadistica
 	// aca me falta el visitor pero no se como se escribe. Invento el nombre
-	public Prestacion esVisitado(Estadistico estadistico) {
+	public TipoPrestacion esVisitado(Estadistico estadistico) {
 		return this;
 	}
 }

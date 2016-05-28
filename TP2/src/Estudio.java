@@ -1,12 +1,10 @@
 
-public abstract class Estudio extends Prestacion {
-
-	private String nombre;
-	private String indicaciones;
-	protected ResultadoEstudio resultado;
+public abstract class Estudio extends TipoPrestacion {
+	protected String indicaciones;
 	
-	public Estudio(String nombre, String indicaciones) {
-		this.nombre = nombre;
+	public Estudio(int id, String nombre, String indicaciones) {
+		super(id, nombre);
+		
 		this.indicaciones = indicaciones;
 	}
 
@@ -21,5 +19,4 @@ public abstract class Estudio extends Prestacion {
 	public String getIndicaciones() {
 		return indicaciones;
 	}
-
 }

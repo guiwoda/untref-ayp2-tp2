@@ -7,7 +7,7 @@ public class Paciente {
 	private Integer dni;
 	private String mail;
 	//hace falta que se cuente con prestaciones pendientes y resueltas, para el ingreso de un paciente al laboratorio
-	private Prestacion[] prestaciones;
+	private TipoPrestacion[] prestaciones;
 	
 	
 	public Paciente(String nombre, Integer telefono, Integer dni, String mail){

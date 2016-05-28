@@ -1,15 +1,9 @@
-
-
-public class EstudioRadiologico extends Estudio{
-
-	public EstudioRadiologico(String nombre, String indicaciones) {
-		super(nombre, indicaciones);
-		// TODO Apéndice de constructor generado automáticamente
+public class EstudioRadiologico extends Estudio {
+	public EstudioRadiologico(int id, String nombre, String indicaciones) {
+		super(id, nombre, indicaciones);
 	}
 	
 	public String toString(){
-		return super.getNombre();
-		
+		return nombre;
 	}
-	
 }

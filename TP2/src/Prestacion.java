@@ -1,33 +1,24 @@
-import java.sql.Date;
+import java.util.Date;
 
-public abstract class Prestacion {
-	private String nombre;
+public class Prestacion {
+	private int id;
+	private TipoPrestacion tipo;
+	private Paciente paciente;
 	private Date fecha;
-	private Integer id;
+	private Resultado resultado;
 	
-	
-	public String toString(){
-		return getNombre();	
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
+	public Prestacion(int id, TipoPrestacion tipo, Paciente paciente, Date fecha) {
 		this.id = id;
+		this.tipo = tipo;
+		this.paciente = paciente;
+		this.fecha = fecha;
 	}
-
-	//aca me falta el visitor pero no se como se escribe. Invento el nombre
-	//public Prestacion esVisitado(Estadistico estadistico){
-		
-	//}
+	
+	public void setResultado(Resultado resultado) {
+		this.resultado = resultado;
+	}
+	
+	public String toString() {
+		return this.tipo.mostrar(this.resultado);
+	}
 }

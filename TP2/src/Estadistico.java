@@ -1,8 +1,12 @@
+import java.util.List;
+
 
 public class Estadistico {
 
-	public void agregarPrestacion(Prestacion prestacion){
-		
+	private List<TipoPrestacion> prestaciones;
+	
+	public void agregarPrestacion(TipoPrestacion prestacion){
+		prestaciones.add(prestacion);
 	}
 	
 	private void calcular(){
