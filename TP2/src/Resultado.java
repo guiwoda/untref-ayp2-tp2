@@ -1,7 +1,7 @@
 
 public abstract class Resultado {
-	private final static String ANORMAL = "anormal";
-	private final static String NORMAL = "normal";
+	private final static String ANORMAL = "Anormal";
+	private final static String NORMAL = "Normal";
 	
 	protected String getNormalidad(boolean esNormal) {
 		if (esNormal) {

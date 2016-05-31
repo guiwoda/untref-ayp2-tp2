@@ -7,14 +7,14 @@ import org.junit.Test;
 
 public class AnalisisTest {
 	private Analisis glucemia;
-	private Resultado resultado;
+	private ResultadoAnalisis resultado;
 
-	@Before
-	public void creoAnalisisYResultado() {
+	@Before 
+	public void creoAnalisisYResultadoNormal() {
 		glucemia = new Analisis(4, "glucemia", 10, 100, "Con globulos en estado critico.");
-		resultado = new ResultadoAnalisis();
+		resultado = new ResultadoAnalisis(20, glucemia);
 		//no le puedo setear un ValorMedido a resultado; no puedo probar Analisis.mostrar()
-		//no faltaria un constructor de ResultadoAnalisis que nos permita agregarle el valorMedido
+		//para que funcione modifique constructor de ResultadoAnalisis pasandole el valorMedido y el analisis
 	}
 
 	@Test
@@ -27,10 +27,10 @@ public class AnalisisTest {
 		assertEquals(100, glucemia.getValorNormalMaximo(), 1.0);
 	}
 	
-//	@Test
-//	public void mostrar(){
-//		
-//	}
+	@Test
+	public void mostrarResultadoPorPantalla(){
+		System.out.println(glucemia.mostrar(resultado));
+	}
 	
 
 }

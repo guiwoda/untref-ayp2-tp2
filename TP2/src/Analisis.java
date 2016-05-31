@@ -20,10 +20,11 @@ public class Analisis extends TipoPrestacion {
 		return this.valorNormalMaximo;
 	}
 	
-	// Para mostrar resultados
+
 	public String mostrar(Resultado resultado) {
-		return  nombre + " " + resultado.toString()
-				+ " dentro del valor minimo " + this.valorNormalMinimo.toString() + " y valor maximo  "
+		//Me obliga a hacer downcasting si quiero usar el metodo especifico
+		return  "Analisis: " + nombre + " " + ((ResultadoAnalisis) resultado).evaluarNormalidad()
+				+ " en el rango de valores " + this.valorNormalMinimo.toString() + " - "
 				+ this.valorNormalMaximo.toString();
 	}
 

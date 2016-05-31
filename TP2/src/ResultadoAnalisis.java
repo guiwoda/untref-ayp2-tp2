@@ -4,6 +4,12 @@ public class ResultadoAnalisis extends Resultado {
 	private Integer valorMedido;
 	private Analisis analisis;
 
+	//esta ok si le paso por constructor el analisis
+	public ResultadoAnalisis(Integer valorMedido, Analisis analisis){
+		this.valorMedido=valorMedido;
+		this.analisis=analisis;
+	}
+	
 	public Integer getValorMedido() {
 		return this.valorMedido;
 	}

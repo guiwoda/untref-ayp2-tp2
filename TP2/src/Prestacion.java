@@ -25,4 +25,5 @@ public class Prestacion {
 	public String toString() {
 		return this.tipo.mostrar(this.resultado);
 	}
+	
 }

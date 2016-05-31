@@ -1,4 +1,6 @@
+import java.util.LinkedList;
 import java.util.List;
+
 
 public abstract class TipoPrestacion {
 	protected Integer id;
@@ -8,6 +10,8 @@ public abstract class TipoPrestacion {
 	public TipoPrestacion(int id, String nombre) {
 		this.id = id;
 		this.nombre = nombre;
+		//LinkedList porque es mas rapido para agregar/borrar en posicion intermedia
+		this.prestaciones= new LinkedList<Prestacion>();
 	}
 	
 	public String toString(){
@@ -17,7 +21,7 @@ public abstract class TipoPrestacion {
 	public String getNombre() {
 		return nombre;
 	}
-
+	//este estaria de mas? lo genero con el constructor
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
