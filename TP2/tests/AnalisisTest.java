@@ -10,7 +10,7 @@ public class AnalisisTest {
 	private ResultadoAnalisis resultado;
 
 	@Before 
-	public void creoAnalisisYResultadoNormal() {
+	public void setupConResultadoNormal() {
 		glucemia = new Analisis(4, "glucemia", 10, 100, "Con globulos en estado critico.");
 		resultado = new ResultadoAnalisis(20, glucemia);
 		//no le puedo setear un ValorMedido a resultado; no puedo probar Analisis.mostrar()

@@ -4,7 +4,6 @@ public abstract class Estudio extends TipoPrestacion {
 	
 	public Estudio(int id, String nombre, String indicaciones) {
 		super(id, nombre);
-		
 		this.indicaciones = indicaciones;
 	}
 
@@ -19,4 +18,11 @@ public abstract class Estudio extends TipoPrestacion {
 	public String getIndicaciones() {
 		return indicaciones;
 	}
+	
+	//Definir si en el Nombre va a aparecer que tipo de estudio es
+//	public String mostrar(Resultado resultado){
+//		return "Estudio: " + nombre + " " 
+//				+ ((ResultadoEstudio) resultado).evaluarNormalidad() 
+//				+ " " + indicaciones;
+//	}
 }

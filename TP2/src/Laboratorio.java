@@ -4,7 +4,7 @@ import java.util.TreeMap;
 public class Laboratorio {
 
 	// para llevar listado de Pacientes
-	private TreeMap<Integer, Paciente>		pacientes;
+	private TreeMap<Integer, Paciente> pacientes;
 	// para estadistica
 	private TreeMap<String, TipoPrestacion>	estudios;
 
