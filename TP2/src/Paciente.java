@@ -5,13 +5,13 @@ public class Paciente {
 	private Integer id;
 	private String nombre;
 	private Integer telefono;
-	private Integer dni;
+	private DNI dni;
 	private String mail;
 	//hace falta que se cuente con prestaciones pendientes y resueltas, para el ingreso de un paciente al laboratorio
 	private TipoPrestacion[] prestaciones;
 	
 	
-	public Paciente(String nombre, Integer telefono, Integer dni, String mail){
+	public Paciente(String nombre, Integer telefono, DNI dni, String mail){
 		this.id = ++lastId;
 		this.nombre = nombre;
 		this.telefono = telefono;
@@ -19,7 +19,7 @@ public class Paciente {
 		this.mail = mail;
 	}
 	
-	public void actualizarDatos(String nombre, Integer telefono, Integer dni, String mail){
+	public void actualizarDatos(String nombre, Integer telefono, DNI dni, String mail){
 		this.nombre=nombre;
 		this.telefono=telefono;
 		this.dni=dni;

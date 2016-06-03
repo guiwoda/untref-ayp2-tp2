@@ -9,15 +9,15 @@ public class Laboratorio {
 	private TreeMap<String, TipoPrestacion>	estudios;
 
 	// Dos metodos para ingreso paciente de acuerdo si existe o no
-	public void ingresoPaciente(String nombre, Integer dni, Integer telefono, String mail, TipoPrestacion[] prestaciones) {
-		Paciente paciente = new Paciente(nombre, dni, telefono, mail);
+	public void ingresoPaciente(String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
+		Paciente paciente = new Paciente(nombre, telefono, dni, mail);
 
 		pacientes.put(paciente.getId(), paciente);
 
 		registrarVisita(paciente, new Date(), prestaciones);
 	}
 
-	public void ingresoPaciente(Integer id, String nombre, Integer dni, Integer telefono, String mail, TipoPrestacion[] prestaciones) {
+	public void ingresoPaciente(Integer id, String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
 		Paciente paciente = pacientes.get(id);
 
 		paciente.actualizarDatos(nombre, telefono, dni, mail);
@@ -29,11 +29,22 @@ public class Laboratorio {
 		for (TipoPrestacion tipo : prestaciones) {
 			Prestacion prestacion = new Prestacion(tipo, paciente, fecha);
 
+			// prestaciones pendientes? -> dentro del paciente?
+			// prestaciones por tipo de prestación?
+			
 		}
 	}
 
 	public void estadistica() {
 
 		Estadistico estadistico = new Estadistico();
+	}
+	
+	// public void ingresarResultadosPorEstudio(TipoPrestacion tipo, Resultado[] resultados)
+	
+	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
+		for (ResultadoAnalisis resultado : resultados) {
+			
+		}
 	}
 }
