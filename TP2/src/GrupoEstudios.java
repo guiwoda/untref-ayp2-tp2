@@ -3,8 +3,8 @@ import java.util.List;
 public class GrupoEstudios extends TipoPrestacion {
 	private List<TipoPrestacion> prestaciones;
 	
-	public GrupoEstudios(int id, String nombre, List<TipoPrestacion> prestaciones) {
-		super(id, nombre);
+	public GrupoEstudios(String nombre, List<TipoPrestacion> prestaciones) {
+		super(nombre);
 		
 		this.prestaciones = prestaciones;
 	}

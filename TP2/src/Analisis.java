@@ -4,8 +4,8 @@ public class Analisis extends TipoPrestacion {
 	private Integer valorNormalMaximo;
 	private String indicaciones;
 
-	public Analisis(int id, String nombre, Integer valorNormalMinimo, Integer valorNormalMaximo, String indicaciones){
-		super(id, nombre);
+	public Analisis(String nombre, Integer valorNormalMinimo, Integer valorNormalMaximo, String indicaciones){
+		super(nombre);
 		
 		this.valorNormalMinimo = valorNormalMinimo;
 		this.valorNormalMaximo = valorNormalMaximo;

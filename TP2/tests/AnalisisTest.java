@@ -6,15 +6,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class AnalisisTest {
-	private Analisis glucemia;
+	private Analisis glucemia = new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 	private ResultadoAnalisis resultado;
 
 	@Before 
 	public void setupConResultadoNormal() {
-		glucemia = new Analisis(4, "glucemia", 10, 100, "Con globulos en estado critico.");
 		resultado = new ResultadoAnalisis(20, glucemia);
-		//no le puedo setear un ValorMedido a resultado; no puedo probar Analisis.mostrar()
-		//para que funcione modifique constructor de ResultadoAnalisis pasandole el valorMedido y el analisis
 	}
 
 	@Test
@@ -29,7 +26,7 @@ public class AnalisisTest {
 	
 	@Test
 	public void mostrarResultadoPorPantalla(){
-		System.out.println(glucemia.mostrar(resultado));
+		assertEquals("Analisis: glucemia Normal en el rango de valores 10 - 100", glucemia.mostrar(resultado));
 	}
 	
 

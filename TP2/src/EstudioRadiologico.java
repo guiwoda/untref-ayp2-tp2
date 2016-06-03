@@ -1,8 +1,6 @@
 public class EstudioRadiologico extends Estudio {
-	
-	//que onda es identico al de la madre
-	public EstudioRadiologico(int id, String nombre, String indicaciones) {
-		super(id, nombre, indicaciones);
+	public EstudioRadiologico(String nombre, String indicaciones) {
+		super(nombre, indicaciones);
 	}
 	
 	public String toString(){

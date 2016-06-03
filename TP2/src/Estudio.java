@@ -1,18 +1,9 @@
-
 public abstract class Estudio extends TipoPrestacion {
 	protected String indicaciones;
 	
-	public Estudio(int id, String nombre, String indicaciones) {
-		super(id, nombre);
+	public Estudio(String nombre, String indicaciones) {
+		super(nombre);
 		this.indicaciones = indicaciones;
-	}
-
-	public String toString() {
-		return getNombre();
-	}
-
-	public String getNombre() {
-		return nombre;
 	}
 
 	public String getIndicaciones() {
@@ -25,4 +16,9 @@ public abstract class Estudio extends TipoPrestacion {
 //				+ ((ResultadoEstudio) resultado).evaluarNormalidad() 
 //				+ " " + indicaciones;
 //	}
+	
+	@Override
+	public String toString() {
+		return getNombre();
+	}
 }
