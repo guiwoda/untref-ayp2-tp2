@@ -14,7 +14,7 @@ public class Laboratorio {
 		ingreso(new Paciente(nombre, telefono, dni, mail), prestaciones);
 	}
 
-	public void ingresoPaciente(Integer id, String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
+	public void ingresoPaciente(int id, String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
 		Paciente paciente = new Paciente(id, nombre, telefono, dni, mail);
 		pacientes.remove(paciente);
 
