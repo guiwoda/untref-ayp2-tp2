@@ -21,4 +21,11 @@ public abstract class Estudio extends TipoPrestacion {
 	public String toString() {
 		return getNombre();
 	}
+	
+	public void cargarResultado(ResultadoEstudio resultado){
+		for (Prestacion prestacion : prestaciones){
+			if(prestacion==resultado.getPrestacion())
+			prestacion.setResultado(resultado);
+		}
+	}
 }

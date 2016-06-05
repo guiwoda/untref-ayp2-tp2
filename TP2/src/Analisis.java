@@ -33,4 +33,11 @@ public class Analisis extends TipoPrestacion {
 	public TipoPrestacion esVisitado(Estadistico estadistico) {
 		return this;
 	}
+	
+	public void cargarResultado(ResultadoAnalisis resultado){
+		for (Prestacion prestacion : prestaciones){
+			if(prestacion==resultado.getPrestacion())
+			prestacion.setResultado(resultado);
+		}
+	}
 }

@@ -45,16 +45,20 @@ public class Laboratorio {
 		Estadistico estadistico = new Estadistico();
 	}
 	
-	// public void ingresarResultadosPorEstudio(TipoPrestacion tipo, Resultado[] resultados)
+	public void ingresarResultadosPorEstudio(Resultado[] resultados){
+		
+	}
 	
-//	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
-//		for (ResultadoAnalisis resultado : resultados) {
-//			Prestacion analisisConResultado = resultado.getPrestacion();
-//			if(estudios.containsKey(analisisConResultado.getNombre())){
-//				TipoPrestacion analisisACompletar = estudios.get(analisisConResultado);
-//				analisisACompletar.s
-//			}
-//			
-//		}
-//	}
+	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
+		for (ResultadoAnalisis resultado : resultados) {
+			Prestacion analisisConResultado = resultado.getPrestacion();
+			Analisis tipoAnalisisConResultado = (Analisis) analisisConResultado.getTipoPrestacion();
+			
+			if(estudios.containsKey(tipoAnalisisConResultado.getNombre())){
+				Analisis analisisACompletar = (Analisis)estudios.get(tipoAnalisisConResultado);
+				analisisACompletar.cargarResultado(resultado);
+			}
+			
+		}
+	}
 }
