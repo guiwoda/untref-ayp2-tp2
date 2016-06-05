@@ -48,50 +48,27 @@ public class Laboratorio {
 		Estadistico estadistico = new Estadistico();
 	}
 	
-	public void ingresarResultadosPorEstudio(HashMap<Boolean, Prestacion> informacionResultados){
+	public void ingresarResultadosPorEstudio(HashMap<Prestacion, Boolean> informacionResultados){
 
-		Set<Map.Entry<Boolean, Prestacion>> informacionResultado = informacionResultados.entrySet();
+		Set<Map.Entry<Prestacion, Boolean>> informacionResultado = informacionResultados.entrySet();
 
-	        for (Map.Entry<Boolean, Prestacion> info : informacionResultado) {
-	        	Boolean esNormal = info.getKey();
+	        for (Map.Entry<Prestacion, Boolean> info : informacionResultado) {
+	        	Boolean esNormal = info.getValue();
 	        	ResultadoEstudio resultado = new ResultadoEstudio(esNormal);
-	        	Prestacion prestacion = info.getValue();
+	        	Prestacion prestacion = info.getKey();
 	        	prestacion.setResultado(resultado);
 	        }
-				
-//		for (ResultadoEstudio informacionResultado : informacionResultado) {
-//			Prestacion estudioConResultado = resultado.getPrestacion();
-//			Estudio tipoEstudioConResultado = (Estudio) estudioConResultado.getTipoPrestacion();
-//			
-//			if(estudios.containsKey(tipoEstudioConResultado.getNombre())){
-//				Estudio estudioACompletar = (Estudio)estudios.get(tipoEstudioConResultado);
-//				estudioACompletar.cargarResultado(resultado);
-//			}
-//			
-//		}
 	}
 	
-	public void ingresarResultadosAnalisis(HashMap<Integer, Prestacion> informacionResultados) {
+	public void ingresarResultadosAnalisis(HashMap<Prestacion, Integer> informacionResultados) {
 		
-		Set<Map.Entry<Integer, Prestacion>> informacionResultado = informacionResultados.entrySet();
+		Set<Map.Entry<Prestacion, Integer>> informacionResultado = informacionResultados.entrySet();
 
-        for (Map.Entry<Integer, Prestacion> info : informacionResultado) {
-        	Integer valorMedido = info.getKey();
+        for (Map.Entry<Prestacion, Integer> info : informacionResultado) {
+        	Integer valorMedido = info.getValue();
         	ResultadoAnalisis resultado = new ResultadoAnalisis(valorMedido);
-        	Prestacion prestacion = info.getValue();
+        	Prestacion prestacion = info.getKey();
         	prestacion.setResultado(resultado);
         }
-        
-        
-//		for (ResultadoAnalisis resultado : resultados) {
-//			Prestacion analisisConResultado = resultado.getPrestacion();
-//			Analisis tipoAnalisisConResultado = (Analisis) analisisConResultado.getTipoPrestacion();
-//			
-//			if(estudios.containsKey(tipoAnalisisConResultado.getNombre())){
-//				Analisis analisisACompletar = (Analisis)estudios.get(tipoAnalisisConResultado);
-//				analisisACompletar.cargarResultado(resultado);
-//			}
-//			
-//		}
 	}
 }
