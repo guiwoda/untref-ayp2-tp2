@@ -22,10 +22,10 @@ public abstract class Estudio extends TipoPrestacion {
 		return getNombre();
 	}
 	
-	public void cargarResultado(ResultadoEstudio resultado){
-		for (Prestacion prestacion : prestaciones){
-			if(prestacion==resultado.getPrestacion())
-			prestacion.setResultado(resultado);
-		}
-	}
+//	public void cargarResultado(ResultadoEstudio resultado){
+//		for (Prestacion prestacion : prestaciones){
+//			if(prestacion==resultado.getPrestacion())
+//			prestacion.setResultado(resultado);
+//		}
+//	}
 }

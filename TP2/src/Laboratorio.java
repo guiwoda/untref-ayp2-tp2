@@ -1,4 +1,9 @@
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class Laboratorio {
@@ -27,7 +32,7 @@ public class Laboratorio {
 
 	public void registrarVisita(Paciente paciente, Date fecha, TipoPrestacion[] prestaciones) {
 		for (TipoPrestacion tipo : prestaciones) {
-			//si no tengo el TipoPrestacion ya cargado
+			//si no tengo el TipoPrestacion ya cargado. Decision de diseño: poder dar de alta prestaiones
 			if(!estudios.containsKey(tipo)){
 				estudios.put(tipo.getNombre(), tipo);
 			}
@@ -45,20 +50,50 @@ public class Laboratorio {
 		Estadistico estadistico = new Estadistico();
 	}
 	
-	public void ingresarResultadosPorEstudio(Resultado[] resultados){
-		
+	public void ingresarResultadosPorEstudio(HashMap<Boolean, Prestacion> informacionResultados){
+
+		Set<Map.Entry<Boolean, Prestacion>> informacionResultado = informacionResultados.entrySet();
+
+	        for (Map.Entry<Boolean, Prestacion> info : informacionResultado) {
+	        	Boolean esNormal = info.getKey();
+	        	ResultadoEstudio resultado = new ResultadoEstudio(esNormal);
+	        	Prestacion prestacion = info.getValue();
+	        	prestacion.setResultado(resultado);
+	        }
+				
+//		for (ResultadoEstudio informacionResultado : informacionResultado) {
+//			Prestacion estudioConResultado = resultado.getPrestacion();
+//			Estudio tipoEstudioConResultado = (Estudio) estudioConResultado.getTipoPrestacion();
+//			
+//			if(estudios.containsKey(tipoEstudioConResultado.getNombre())){
+//				Estudio estudioACompletar = (Estudio)estudios.get(tipoEstudioConResultado);
+//				estudioACompletar.cargarResultado(resultado);
+//			}
+//			
+//		}
 	}
 	
-	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
-		for (ResultadoAnalisis resultado : resultados) {
-			Prestacion analisisConResultado = resultado.getPrestacion();
-			Analisis tipoAnalisisConResultado = (Analisis) analisisConResultado.getTipoPrestacion();
-			
-			if(estudios.containsKey(tipoAnalisisConResultado.getNombre())){
-				Analisis analisisACompletar = (Analisis)estudios.get(tipoAnalisisConResultado);
-				analisisACompletar.cargarResultado(resultado);
-			}
-			
-		}
+	public void ingresarResultadosAnalisis(HashMap<Integer, Prestacion> informacionResultados) {
+		
+		Set<Map.Entry<Integer, Prestacion>> informacionResultado = informacionResultados.entrySet();
+
+        for (Map.Entry<Integer, Prestacion> info : informacionResultado) {
+        	Integer valorMedido = info.getKey();
+        	ResultadoAnalisis resultado = new ResultadoAnalisis(valorMedido);
+        	Prestacion prestacion = info.getValue();
+        	prestacion.setResultado(resultado);
+        }
+        
+        
+//		for (ResultadoAnalisis resultado : resultados) {
+//			Prestacion analisisConResultado = resultado.getPrestacion();
+//			Analisis tipoAnalisisConResultado = (Analisis) analisisConResultado.getTipoPrestacion();
+//			
+//			if(estudios.containsKey(tipoAnalisisConResultado.getNombre())){
+//				Analisis analisisACompletar = (Analisis)estudios.get(tipoAnalisisConResultado);
+//				analisisACompletar.cargarResultado(resultado);
+//			}
+//			
+//		}
 	}
 }
