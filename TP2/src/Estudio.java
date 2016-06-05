@@ -18,11 +18,6 @@ public abstract class Estudio extends TipoPrestacion {
 //				+ ((ResultadoEstudio) resultado).evaluarNormalidad() 
 //				+ " " + indicaciones;
 //	}
-	
-	@Override
-	public String toString() {
-		return getNombre();
-	}
 
 	public void cargarResultado(ResultadoEstudio resultado){
 		for (Prestacion prestacion : prestaciones){

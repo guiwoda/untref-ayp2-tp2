@@ -62,4 +62,5 @@ public class Prestacion implements Comparable<Prestacion> {
 	public Resultado getResultado() {
 		return resultado;
 	}
+
 }
