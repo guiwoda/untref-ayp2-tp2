@@ -11,11 +11,11 @@ public class Paciente {
 	private TipoPrestacion[] prestaciones;
 	
 	
-	public Paciente(String nombre, Integer telefono, DNI dni, String mail){
+	public Paciente(String nombre, Integer telefono, DNI i, String mail){
 		this.id = ++lastId;
 		this.nombre = nombre;
 		this.telefono = telefono;
-		this.dni = dni;
+		this.dni = i;
 		this.mail = mail;
 	}
 	

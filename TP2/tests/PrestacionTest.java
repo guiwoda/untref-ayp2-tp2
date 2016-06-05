@@ -6,7 +6,7 @@ import org.junit.Test;
 public class PrestacionTest {
 	private Prestacion prestacion;
 	private Analisis analisis = new Analisis("glucemia", 10, 100, "Con globulos en estado critico."); 
-	private Paciente paciente = new Paciente("Estefania Diaz", 46759087, 33456987, "mail@mail.com");
+	private Paciente paciente = new Paciente("Estefania Diaz", 46759087, DNI.masculino(33456987), "mail@mail.com");
 	private Date fecha = new Date();
 	private Resultado resultado;
 	
