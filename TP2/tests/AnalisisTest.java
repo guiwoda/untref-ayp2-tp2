@@ -16,8 +16,8 @@ public class AnalisisTest {
 	@Before
 	public void setup(){
 		pacienteJuan = new Paciente("Juan Carlos", 46532409, DNI.masculino(33097654), "mail@otromail.com");
-		glucemia = new Prestacion(analisis, pacienteJuan, fecha);
 		analisis = new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
+		glucemia = new Prestacion(analisis, pacienteJuan, fecha);
 		resultado = new ResultadoAnalisis(20, glucemia);
 	}
 
