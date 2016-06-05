@@ -16,5 +16,23 @@ public class PacienteTest {
 	@Test
 	public void chequeoDeIdCuandoHayVariosPacientes(){
 		assertEquals(2, pacienteLali.getId(), 1.0);
+		assertEquals(1, pacienteJuan.getId(), 1.0);
+	}
+	
+	@Test
+	public void losPacientesSeComparan(){
+		assertEquals(true, pacienteLali.compareTo(pacienteLali));
+		assertEquals(true, pacienteJuan.compareTo(pacienteJuan));
+		assertEquals(false, pacienteLali.compareTo(pacienteJuan));
+		assertEquals(false, pacienteLali.compareTo(pacienteJuan));
+	}
+	
+	@Test
+	public void elPacienteActualizaDatos(){
+		pacienteJuan.actualizarDatos("Juana", 92830492, DNI.femenino(99332200), "laJuanci@jolo.com");
+		assertEquals("Juana", pacienteJuan.getNombre());
+		assertEquals(92830492, pacienteJuan.getTelefono(), 0.1);
+		assertEquals(DNI.femenino(99332200), pacienteJuan.getDni());
+		assertEquals("laJuanci@jolo.com", pacienteJuan.getMail());	
 	}
 }

@@ -34,4 +34,20 @@ public class Paciente {
 	public Integer getId() {
 		return id;
 	}
+	
+	public String getNombre(){
+		return nombre;
+	}
+	
+	public DNI getDni(){
+		return dni;
+	}
+	
+	public String getMail(){
+		return mail;
+	}
+	
+	public Integer getTelefono(){
+		return telefono;
+	}
 }
