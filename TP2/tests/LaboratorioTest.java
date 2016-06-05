@@ -31,14 +31,18 @@ public class LaboratorioTest {
 		Map<Prestacion, Integer> resultadosAnalisis = new HashMap<>();
 		Map<Prestacion, Boolean> resultadosEstudios = new HashMap<>();
 
-		for (TipoPrestacion tipoPrestacion : tipoPrestaciones) {
+		for (int i = 0; i < tipoPrestaciones.length; i++) {
+			TipoPrestacion tipoPrestacion = tipoPrestaciones[i];
+
 			List<Prestacion> prestaciones = tipoPrestacion.getPrestaciones();
 
-			for (Prestacion prestacion : prestaciones) {
+			for (int j = 0; j < prestaciones.size(); j++) {
+				Prestacion prestacion = prestaciones.get(j);
+
 				if (tipoPrestacion instanceof Analisis) {
-					resultadosAnalisis.put(prestacion, 35 + (int) (Math.random() * 100));
+					resultadosAnalisis.put(prestacion, (i + j) * 100);
 				} else {
-					resultadosEstudios.put(prestacion, (Math.random() * 100 > 50));
+					resultadosEstudios.put(prestacion, (i + j) % 2 == 0);
 				}
 			}
 		}
@@ -46,6 +50,36 @@ public class LaboratorioTest {
 		laboratorio.ingresarResultadosAnalisis(resultadosAnalisis);
 		laboratorio.ingresarResultadosPorEstudio(resultadosEstudios);
 
-		System.out.println(laboratorio.estadistica(new Date(1462060800), new Date()));
+		String result = laboratorio.estadistica(new Date(1462060800), new Date());
+
+		assertEquals("Analisis 2: \n" +
+			"Cantidad de pacientes: 4\n" +
+			"Valor mínimo medido: 100\n" +
+			"Valor máximo medido: 400\n" +
+			"Promedio de valores: 250\n" +
+			"\n" +
+			"Analisis 4: \n" +
+			"Cantidad de pacientes: 4\n" +
+			"Valor mínimo medido: 300\n" +
+			"Valor máximo medido: 600\n" +
+			"Promedio de valores: 450\n" +
+			"\n" +
+			"Estudio 1: \n" +
+			"Cantidad de pacientes: 4\n" +
+			"Resultados normales: 2\n" +
+			"Resultados anormales: 2\n" +
+			"\n" +
+			"Estudio 3: \n" +
+			"Cantidad de pacientes: 4\n" +
+			"Resultados normales: 2\n" +
+			"Resultados anormales: 2\n" +
+			"\n" +
+			"Estudio 5: \n" +
+			"Cantidad de pacientes: 4\n" +
+			"Resultados normales: 2\n" +
+			"Resultados anormales: 2\n\n",
+			result);
+
+		System.out.println(result);
 	}
 }
