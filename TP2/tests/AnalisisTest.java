@@ -18,7 +18,7 @@ public class AnalisisTest {
 		pacienteJuan = new Paciente("Juan Carlos", 46532409, DNI.masculino(33097654), "mail@otromail.com");
 		analisis = new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 		glucemia = new Prestacion(analisis, pacienteJuan, fecha);
-		resultado = new ResultadoAnalisis(20, glucemia );
+		resultado = new ResultadoAnalisis(20);
 	}
 
 

@@ -17,7 +17,7 @@ public class PrestacionTest {
 		// creo Prestacion con TipoPrestacion Analisis
 		analisis	= new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 		prestacion = new Prestacion(analisis, paciente, fecha);
-		resultado = new ResultadoAnalisis(20, prestacion);
+		resultado = new ResultadoAnalisis(20);
 
 	}
 
