@@ -9,15 +9,10 @@ import org.junit.Test;
 
 public class AnalisisTest {
 	private ResultadoAnalisis resultado;
-	private Paciente pacienteJuan;
 	private Analisis analisis;
-	private Date fecha = new Date();
-	private Prestacion glucemia;
 	@Before
 	public void setup(){
-		pacienteJuan = new Paciente("Juan Carlos", 46532409, DNI.masculino(33097654), "mail@otromail.com");
 		analisis = new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
-		glucemia = new Prestacion(analisis, pacienteJuan, fecha);
 		resultado = new ResultadoAnalisis(20);
 	}
 
