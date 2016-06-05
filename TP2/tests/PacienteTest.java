@@ -32,20 +32,10 @@ public class PacienteTest {
 		assertFalse(pacienteLali.compareTo(pacienteJuan));
 		assertFalse(pacienteLali.compareTo(pacienteJuan));
 	}
-	
-	@Test
-	public void elPacienteActualizaDatos(){
-		pacienteJuan.actualizarDatos("Juana", 92830492, DNI.femenino(99332200), "laJuanci@jolo.com");
-		assertEquals("Juana", pacienteJuan.getNombre());
-		assertEquals(92830492, pacienteJuan.getTelefono(), 0.1);
-		assertTrue(pacienteJuan.getDni().equals(DNI.femenino(99332200)));
-		assertEquals("laJuanci@jolo.com", pacienteJuan.getEmail());
-	}
+
 	@Test
 	public void elPacienteAgregaPrestacion(){
 		pacienteJuan.agregarPrestacion(prestacion);
 		assertTrue(pacienteJuan.getPrestaciones().contains(prestacion));
 	}
-	
-	
 }
