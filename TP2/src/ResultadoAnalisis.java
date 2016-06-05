@@ -5,9 +5,9 @@ public class ResultadoAnalisis extends Resultado {
 	private Prestacion prestacionTipoAnalisis;
 
 	//esta ok si le paso por constructor el analisis
-	public ResultadoAnalisis(Integer valorMedido, Prestacion prestacionTipoAnalisis){
+	public ResultadoAnalisis(Integer valorMedido, Prestacion glucemia){
 		this.valorMedido=valorMedido;
-		this.prestacionTipoAnalisis=prestacionTipoAnalisis;
+		this.prestacionTipoAnalisis=glucemia;
 	}
 	
 	public Integer getValorMedido() {
