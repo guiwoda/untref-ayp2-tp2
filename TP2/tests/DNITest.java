@@ -32,4 +32,11 @@ public class DNITest {
 		
 		assertEquals("M97867564", dni.toString());
 	}
+	@Test
+	public void testEquals(){
+		DNI dni = DNI.masculino(97867564);
+		assertEquals(true, dni.equals(dni));
+	}
+	
+	
 }

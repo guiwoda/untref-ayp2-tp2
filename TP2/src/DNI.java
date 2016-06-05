@@ -22,6 +22,10 @@ public class DNI {
 		return numero;
 	}
 	
+	public String getSexo(){
+		return sexo;
+	}
+	
 	@Override
 	public String toString() {
 		return sexo + String.valueOf(numero);
@@ -33,5 +37,9 @@ public class DNI {
 
 	public boolean isFemenino() {
 		return sexo == FEMENINO;
+	}
+	
+	public boolean equals(DNI dniAComparar){
+		return (this.getNumero() == dniAComparar.getNumero()) && (this.sexo == dniAComparar.getSexo());
 	}
 }
