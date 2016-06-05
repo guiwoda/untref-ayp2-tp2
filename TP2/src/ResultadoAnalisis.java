@@ -20,4 +20,8 @@ public class ResultadoAnalisis extends Resultado {
 			this.valorMedido> analisis.getValorNormalMinimo()
 		);
 	}
+	
+	public Analisis getAnalisis(){
+		return analisis;
+	}
 }

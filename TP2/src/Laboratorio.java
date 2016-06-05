@@ -27,10 +27,15 @@ public class Laboratorio {
 
 	public void registrarVisita(Paciente paciente, Date fecha, TipoPrestacion[] prestaciones) {
 		for (TipoPrestacion tipo : prestaciones) {
+			//si no tengo el TipoPrestacion ya cargado
+			if(!estudios.containsKey(tipo)){
+				estudios.put(tipo.getNombre(), tipo);
+			}
+			TipoPrestacion tipoPrestacion = estudios.get(tipo.getNombre());
 			Prestacion prestacion = new Prestacion(tipo, paciente, fecha);
-
+			tipoPrestacion.addPrestacion(prestacion);
+			paciente.agregarPrestacion(prestacion);
 			// prestaciones pendientes? -> dentro del paciente?
-			// prestaciones por tipo de prestación?
 			
 		}
 	}
@@ -44,7 +49,7 @@ public class Laboratorio {
 	
 	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
 		for (ResultadoAnalisis resultado : resultados) {
-			
+			resultado.getAnalisis().getNombre();
 		}
 	}
 }
