@@ -14,10 +14,10 @@ public class PrestacionTest {
 
 	@Before
 	public void inicializoPrestacionConAnalisis() {
-		resultado = new ResultadoAnalisis(20, analisis);
 		// creo Prestacion con TipoPrestacion Analisis
 		analisis	= new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 		prestacion = new Prestacion(analisis, paciente, fecha);
+		resultado = new ResultadoAnalisis(20, prestacion);
 
 	}
 
