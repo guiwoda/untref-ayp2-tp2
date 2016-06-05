@@ -1,64 +1,57 @@
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Paciente {
 	private static Integer lastId = 0;
-	
+
 	private Integer id;
 	private String nombre;
 	private Integer telefono;
 	private DNI dni;
-	private String mail;
-	//hace falta que se cuente con prestaciones pendientes y resueltas, para el ingreso de un paciente al laboratorio
+	private String email;
 	private List<Prestacion> prestaciones = new LinkedList<>();
-	
-	public Paciente(String nombre, Integer telefono, DNI i, String mail){
-		this.id = ++lastId;
+
+	public Paciente(int id, String nombre, Integer telefono, DNI dni, String email) {
+		this.id = id;
 		this.nombre = nombre;
 		this.telefono = telefono;
-		this.dni = i;
-		this.mail = mail;
+		this.dni = dni;
+		this.email = email;
 	}
-	
-	public void actualizarDatos(String nombre, Integer telefono, DNI dni, String mail){
-		this.nombre=nombre;
-		this.telefono=telefono;
-		this.dni=dni;
-		this.mail=mail;
+
+	public Paciente(String nombre, Integer telefono, DNI dni, String email) {
+		this(++lastId, nombre, telefono, dni, email);
 	}
-	
-	public void agregarPrestacion(Prestacion prestacion){
-		
+
+	public void agregarPrestacion(Prestacion prestacion) {
 		prestaciones.add(prestacion);
 	}
-	
-	public List<Prestacion> getPrestaciones(){
+
+	public List<Prestacion> getPrestaciones() {
 		return prestaciones;
 	}
-	
-	//Lo usamos para el Set de Pacientes de Laboratorio
-	public Boolean compareTo(Paciente pacienteAComparar){
-		return (this.id == pacienteAComparar.id);
+
+	public Boolean compareTo(Paciente other) {
+		return (this.id.equals(other.id));
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
-	
-	public String getNombre(){
+
+	public String getNombre() {
 		return nombre;
 	}
-	
-	public DNI getDni(){
+
+	public DNI getDni() {
 		return dni;
 	}
-	
-	public String getMail(){
-		return mail;
+
+	public String getEmail() {
+		return email;
 	}
-	
-	public Integer getTelefono(){
+
+	public Integer getTelefono() {
 		return telefono;
 	}
 }

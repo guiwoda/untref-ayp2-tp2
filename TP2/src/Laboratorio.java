@@ -7,25 +7,22 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class Laboratorio {
-
-	// para llevar listado de Pacientes
-	private Set<Paciente> pacientes = new HashSet<Paciente>();
-	// para estadistica
+	private Set<Paciente> pacientes = new HashSet<>();
 	private Map<String, TipoPrestacion>	estudios = new TreeMap<>();
 
-	// Dos metodos para ingreso paciente de acuerdo si existe o no
 	public void ingresoPaciente(String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
-		Paciente paciente = new Paciente(nombre, telefono, dni, mail);
-
-		pacientes.add(paciente);
-
-		registrarVisita(paciente, new Date(), prestaciones);
+		ingreso(new Paciente(nombre, telefono, dni, mail), prestaciones);
 	}
 
 	public void ingresoPaciente(Integer id, String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
-		Paciente paciente = pacientes.contains(o).get(id);
+		Paciente paciente = new Paciente(id, nombre, telefono, dni, mail);
+		pacientes.remove(paciente);
 
-		paciente.actualizarDatos(nombre, telefono, dni, mail);
+		ingreso(paciente, prestaciones);
+	}
+
+	private void ingreso(Paciente paciente, TipoPrestacion[] prestaciones) {
+		pacientes.add(paciente);
 
 		registrarVisita(paciente, new Date(), prestaciones);
 	}
@@ -82,7 +79,7 @@ public class Laboratorio {
 	
 	public String mostrarResultados(){
 		StringBuilder builder = new StringBuilder();
-		
+
 		Iterator iterador = pacientes.iterator();
 		while (iterador.hasNext()){
 			Paciente paciente = (Paciente)iterador.next();

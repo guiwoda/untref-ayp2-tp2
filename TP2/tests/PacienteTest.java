@@ -39,7 +39,7 @@ public class PacienteTest {
 		assertEquals("Juana", pacienteJuan.getNombre());
 		assertEquals(92830492, pacienteJuan.getTelefono(), 0.1);
 		assertTrue(pacienteJuan.getDni().equals(DNI.femenino(99332200)));
-		assertEquals("laJuanci@jolo.com", pacienteJuan.getMail());	
+		assertEquals("laJuanci@jolo.com", pacienteJuan.getEmail());
 	}
 	@Test
 	public void elPacienteAgregaPrestacion(){
