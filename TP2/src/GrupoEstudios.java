@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.List;
 
 public class GrupoEstudios extends TipoPrestacion {
@@ -28,5 +29,10 @@ public class GrupoEstudios extends TipoPrestacion {
 		}
 		
 		return builder.toString();
+	}
+
+	@Override
+	public String getEstadisticas(Date inicio, Date fin) {
+		return "";
 	}
 }

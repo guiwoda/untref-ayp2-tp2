@@ -14,8 +14,6 @@ public class Prestacion implements Comparable<Prestacion> {
 		this.tipo = tipo;
 		this.paciente = paciente;
 		this.fecha = fecha;
-		
-		tipo.addPrestacion(this);
 	}
 	
 	public void setResultado(Resultado resultado) {
@@ -52,8 +50,16 @@ public class Prestacion implements Comparable<Prestacion> {
 	public boolean equals(Prestacion other) {
 		return id == other.id;
 	}
-	
+
 	public TipoPrestacion getTipoPrestacion(){
 		return this.tipo;
+	}
+
+	public boolean hechaEntre(Date inicio, Date fin) {
+		return this.fecha.compareTo(inicio) >= 0 && this.fecha.compareTo(fin) <= 0;
+	}
+
+	public Resultado getResultado() {
+		return resultado;
 	}
 }

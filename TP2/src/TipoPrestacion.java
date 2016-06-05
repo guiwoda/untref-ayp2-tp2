@@ -1,7 +1,6 @@
-import java.util.Iterator;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-
 
 public abstract class TipoPrestacion {
 	private static int lastId = 0;
@@ -30,16 +29,27 @@ public abstract class TipoPrestacion {
 	public void addPrestacion(Prestacion prestacion) {
 		this.prestaciones.add(prestacion);
 	}
-	
-	
-	//aca me falta el visitor pero no se como se escribe. Invento el nombre
-	//public Prestacion esVisitado(Estadistico estadistico){
-		
-	//}
 
 	@Override
 	public String toString(){
 		return getNombre();	
 	}
 
+	abstract public String getEstadisticas(Date inicio, Date fin);
+
+	public List<Prestacion> getPrestaciones() {
+		return prestaciones;
+	}
+
+	protected List<Prestacion> getPrestacionesEntre(Date inicio, Date fin) {
+		List<Prestacion> result = new LinkedList<Prestacion>();
+
+		for (Prestacion prestacion : prestaciones) {
+			if (prestacion.hechaEntre(inicio, fin)) {
+				result.add(prestacion);
+			}
+		}
+
+		return result;
+	}
 }
