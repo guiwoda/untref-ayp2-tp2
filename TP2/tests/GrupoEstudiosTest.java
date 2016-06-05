@@ -1,4 +1,3 @@
-
 import static org.junit.Assert.*;
 
 import java.util.HashMap;
@@ -9,36 +8,35 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class GrupoEstudiosTest {
-	private GrupoEstudios grupo;
-	private List<TipoPrestacion> prestaciones;
-	private Estudio cardio;
-	private Estudio radio;
-	@Before
-	public void setUp(){
-		cardio = new EstudioCardiologico("electro", "Debe tener una linea que sube y baja");
-		radio = new EstudioRadiologico("Placa dental", "Debe tener de 2 a 128 dientes");
+    private GrupoEstudios grupo;
+    private Estudio cardio;
+    private Estudio radio;
 
-		prestaciones = new LinkedList<>();
-		prestaciones.add(cardio);
-		prestaciones.add(radio);
+    @Before
+    public void setUp() {
+        cardio = new EstudioCardiologico("electro", "Debe tener una linea que sube y baja");
+        radio = new EstudioRadiologico("Placa dental", "Debe tener de 2 a 128 dientes");
 
-		grupo = new GrupoEstudios("Electro y placa dental", prestaciones);
-	}
-	@Test
-	public void testMostrar() {
-		Map<TipoPrestacion, Resultado> mapa = new HashMap<>();
-		ResultadoEstudio subresultado = new ResultadoEstudio(true);
+        List<TipoPrestacion> prestaciones = new LinkedList<>();
+        prestaciones.add(cardio);
+        prestaciones.add(radio);
 
-		mapa.put(cardio, subresultado);
-		mapa.put(radio, subresultado);
+        grupo = new GrupoEstudios("Electro y placa dental", prestaciones);
+    }
 
-		ResultadoGrupoEstudios resultado = new ResultadoGrupoEstudios(mapa);
+    @Test
+    public void testMostrar() {
+        Map<TipoPrestacion, Resultado> mapa = new HashMap<>();
+        ResultadoEstudio subresultado = new ResultadoEstudio(true);
 
-		assertEquals("Electro y placa dental\n" +
-			"  Estudio Cardiológico: electro Normal Debe tener una linea que sube y baja\n" +
-			"  Estudio Radiologico: Placa dental Normal Debe tener de 2 a 128 dientes\n", grupo.mostrar(resultado));
-	}
+        mapa.put(cardio, subresultado);
+        mapa.put(radio, subresultado);
 
+        ResultadoGrupoEstudios resultado = new ResultadoGrupoEstudios(mapa);
+
+        assertEquals("Electro y placa dental\n" +
+            "  Estudio Cardiológico: electro Normal Debe tener una linea que sube y baja\n" +
+            "  Estudio Radiologico: Placa dental Normal Debe tener de 2 a 128 dientes\n", grupo.mostrar(resultado));
+    }
 }
