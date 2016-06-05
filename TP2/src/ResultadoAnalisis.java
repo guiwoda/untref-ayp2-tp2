@@ -2,27 +2,22 @@
 public class ResultadoAnalisis extends Resultado {
 	// id iria el del super
 	private Integer valorMedido;
-	private Prestacion prestacionTipoAnalisis;
-
+	
+	//se borra TipoAnalisis
 	//esta ok si le paso por constructor el analisis
-	public ResultadoAnalisis(Integer valorMedido, Prestacion glucemia){
+	public ResultadoAnalisis(Integer valorMedido){
 		this.valorMedido=valorMedido;
-		this.prestacionTipoAnalisis=glucemia;
 	}
 	
 	public Integer getValorMedido() {
 		return this.valorMedido;
 	}
 
-	public String evaluarNormalidad() {
-		Analisis tipoAnalisis = (Analisis) prestacionTipoAnalisis.getTipoPrestacion();
+	public String evaluarNormalidad(Integer minimo, Integer maximo) {
 		return getNormalidad(
-			this.valorMedido < tipoAnalisis.getValorNormalMaximo() && 
-			this.valorMedido> tipoAnalisis.getValorNormalMinimo()
+			this.valorMedido < maximo && 
+			this.valorMedido> minimo
 		);
 	}
 	
-	public Prestacion getPrestacion(){
-		return prestacionTipoAnalisis;
-	}
 }
