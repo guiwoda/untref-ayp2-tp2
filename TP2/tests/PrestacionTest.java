@@ -1,11 +1,13 @@
 import static org.junit.Assert.*;
+
 import java.util.Date;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class PrestacionTest {
 	private Prestacion	prestacion;
-	private Prestacion	analisis	= new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
+	private Analisis	analisis;
 	private Paciente	paciente	= new Paciente("Estefania Diaz", 46759087, DNI.masculino(33456987), "mail@mail.com");
 	private Date		fecha		= new Date();
 	private Resultado	resultado;
@@ -14,6 +16,7 @@ public class PrestacionTest {
 	public void inicializoPrestacionConAnalisis() {
 		resultado = new ResultadoAnalisis(20, analisis);
 		// creo Prestacion con TipoPrestacion Analisis
+		analisis	= new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 		prestacion = new Prestacion(analisis, paciente, fecha);
 
 	}

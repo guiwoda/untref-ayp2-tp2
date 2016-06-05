@@ -2,12 +2,12 @@
 public class ResultadoAnalisis extends Resultado {
 	// id iria el del super
 	private Integer valorMedido;
-	private Prestacion prestacionTipoAnalisis;
+	private Analisis prestacionTipoAnalisis;
 
 	//esta ok si le paso por constructor el analisis
-	public ResultadoAnalisis(Integer valorMedido, Prestacion glucemia){
+	public ResultadoAnalisis(Integer valorMedido, Analisis analisis){
 		this.valorMedido=valorMedido;
-		this.prestacionTipoAnalisis=glucemia;
+		this.prestacionTipoAnalisis=analisis;
 	}
 	
 	public Integer getValorMedido() {
