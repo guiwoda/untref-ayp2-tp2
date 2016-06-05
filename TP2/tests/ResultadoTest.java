@@ -14,12 +14,12 @@ ResultadoAnalisis resultado;
 	
 	@Test
 	public void evaluaNormal() {
-		assertEquals (true ,resultado.evaluarNormalidad(10, 40));
+		assertEquals ("Normal" ,resultado.evaluarNormalidad(10, 40));
 	}
 	
 	@Test
 	public void evaluaAnormal() {
-		assertEquals (false ,resultado.evaluarNormalidad(10, 12));
+		assertEquals ("Anormal" ,resultado.evaluarNormalidad(10, 12));
 	}
 
 	

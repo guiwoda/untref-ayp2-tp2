@@ -20,9 +20,9 @@ public class PacienteTest {
 	}
 	
 	@Test
-	public void chequeoDeIdCuandoHayVariosPacientes(){
-		assertEquals(2, pacienteLali.getId(), 1.0);
-		assertEquals(1, pacienteJuan.getId(), 1.0);
+	public void pacientesTienenId(){
+		assertNotEquals(null, pacienteLali.getId(), 1.0);
+		assertNotEquals(null, pacienteJuan.getId(), 1.0);
 	}
 	
 	@Test
