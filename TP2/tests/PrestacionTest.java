@@ -22,5 +22,15 @@ public class PrestacionTest {
 	public void seteoResultadoConAnalisisEImprimoPantalla(){
 		prestacion.setResultado(resultado);
 		assertEquals("Analisis: glucemia Normal en el rango de valores 10 - 100", prestacion.toString());
-	}	
+	}
+	
+	@Test
+	public void seOrdenanPorNombreDelTipoDePrestacion() {
+		EstudioCardiologico estudio = new EstudioCardiologico("electrocardiograma", "ninguna.");
+		
+		Prestacion otra = new Prestacion(estudio, paciente, fecha);
+		
+		assertTrue(prestacion.compareTo(otra) > 0);
+		assertTrue(otra.compareTo(prestacion) < 0);
+	}
 }

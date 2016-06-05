@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Prestacion {
+public class Prestacion implements Comparable<Prestacion> {
 	private static int lastId = 0;
 	
 	private int id;
@@ -25,5 +25,9 @@ public class Prestacion {
 	public String toString() {
 		return this.tipo.mostrar(this.resultado);
 	}
-	
+
+	@Override
+	public int compareTo(Prestacion otra) {
+		return tipo.getNombre().compareTo(otra.tipo.getNombre());
+	}
 }
