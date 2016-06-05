@@ -52,4 +52,8 @@ public class Prestacion implements Comparable<Prestacion> {
 	public boolean equals(Prestacion other) {
 		return id == other.id;
 	}
+	
+	public TipoPrestacion getTipoPrestacion(){
+		return this.tipo;
+	}
 }

@@ -47,9 +47,14 @@ public class Laboratorio {
 	
 	// public void ingresarResultadosPorEstudio(TipoPrestacion tipo, Resultado[] resultados)
 	
-	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
-		for (ResultadoAnalisis resultado : resultados) {
-			resultado.getAnalisis().getNombre();
-		}
-	}
+//	public void ingresarResultadosAnalisis(ResultadoAnalisis[] resultados) {
+//		for (ResultadoAnalisis resultado : resultados) {
+//			Prestacion analisisConResultado = resultado.getPrestacion();
+//			if(estudios.containsKey(analisisConResultado.getNombre())){
+//				TipoPrestacion analisisACompletar = estudios.get(analisisConResultado);
+//				analisisACompletar.s
+//			}
+//			
+//		}
+//	}
 }

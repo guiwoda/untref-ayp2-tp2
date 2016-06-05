@@ -2,12 +2,12 @@
 public class ResultadoAnalisis extends Resultado {
 	// id iria el del super
 	private Integer valorMedido;
-	private Analisis analisis;
+	private Prestacion prestacionTipoAnalisis;
 
 	//esta ok si le paso por constructor el analisis
-	public ResultadoAnalisis(Integer valorMedido, Analisis analisis){
+	public ResultadoAnalisis(Integer valorMedido, Prestacion prestacionTipoAnalisis){
 		this.valorMedido=valorMedido;
-		this.analisis=analisis;
+		this.prestacionTipoAnalisis=prestacionTipoAnalisis;
 	}
 	
 	public Integer getValorMedido() {
@@ -15,13 +15,14 @@ public class ResultadoAnalisis extends Resultado {
 	}
 
 	public String evaluarNormalidad() {
+		Analisis tipoAnalisis = (Analisis) prestacionTipoAnalisis.getTipoPrestacion();
 		return getNormalidad(
-			this.valorMedido < analisis.getValorNormalMaximo() && 
-			this.valorMedido> analisis.getValorNormalMinimo()
+			this.valorMedido < tipoAnalisis.getValorNormalMaximo() && 
+			this.valorMedido> tipoAnalisis.getValorNormalMinimo()
 		);
 	}
 	
-	public Analisis getAnalisis(){
-		return analisis;
+	public Prestacion getPrestacion(){
+		return prestacionTipoAnalisis;
 	}
 }
