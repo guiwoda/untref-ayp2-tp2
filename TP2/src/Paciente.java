@@ -11,7 +11,7 @@ public class Paciente {
 	private DNI dni;
 	private String mail;
 	//hace falta que se cuente con prestaciones pendientes y resueltas, para el ingreso de un paciente al laboratorio
-	private List<TipoPrestacion> prestaciones = new LinkedList<>();
+	private List<Prestacion> prestaciones = new LinkedList<>();
 	
 	public Paciente(String nombre, Integer telefono, DNI i, String mail){
 		this.id = ++lastId;
@@ -28,8 +28,13 @@ public class Paciente {
 		this.mail=mail;
 	}
 	
-	public void agregarPrestacion(TipoPrestacion prestacion){
+	public void agregarPrestacion(Prestacion prestacion){
+		
 		prestaciones.add(prestacion);
+	}
+	
+	public void getPrestaciones(){
+		
 	}
 	
 	//Lo usamos para el Set de Pacientes de Laboratorio

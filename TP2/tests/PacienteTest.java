@@ -1,16 +1,18 @@
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class PacienteTest {
-	Paciente pacienteJuan;
-	Paciente pacienteLali;
-	
+	private Paciente pacienteJuan;
+	private Paciente pacienteLali;
+
+	private Analisis analisis;
 	@Before
 	public void setup(){
 		pacienteJuan = new Paciente("Juan Carlos", 46532409, DNI.masculino(33097654), "mail@otromail.com");
 		pacienteLali = new Paciente("Lali Esteb", 46432409, DNI.femenino(3548654), "unMail@otromail.com");
-		
+		analisis = new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 	}
 	
 	@Test
@@ -35,4 +37,9 @@ public class PacienteTest {
 		assertEquals(DNI.femenino(99332200), pacienteJuan.getDni());
 		assertEquals("laJuanci@jolo.com", pacienteJuan.getMail());	
 	}
+	@Test
+	public void elPacienteAgregaPrestacion(){
+		
+	}
+	
 }
