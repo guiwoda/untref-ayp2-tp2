@@ -33,8 +33,8 @@ public class Paciente {
 		prestaciones.add(prestacion);
 	}
 	
-	public void getPrestaciones(){
-		
+	public List<Prestacion> getPrestaciones(){
+		return prestaciones;
 	}
 	
 	//Lo usamos para el Set de Pacientes de Laboratorio
