@@ -30,4 +30,26 @@ public class Prestacion implements Comparable<Prestacion> {
 	public int compareTo(Prestacion otra) {
 		return tipo.getNombre().compareTo(otra.tipo.getNombre());
 	}
+
+	@Override
+	public int hashCode() {
+		return id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		
+		return equals((Prestacion) obj);
+	}
+	
+	public boolean equals(Prestacion other) {
+		return id == other.id;
+	}
 }
