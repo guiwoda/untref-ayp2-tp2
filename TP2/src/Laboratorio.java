@@ -1,13 +1,15 @@
+import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Laboratorio {
 
 	// para llevar listado de Pacientes
-	private Map<Integer, Paciente> pacientes = new TreeMap<>();
+	private Set<Paciente> pacientes = new HashSet<Paciente>();
 	// para estadistica
 	private Map<String, TipoPrestacion>	estudios = new TreeMap<>();
 
@@ -15,13 +17,13 @@ public class Laboratorio {
 	public void ingresoPaciente(String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
 		Paciente paciente = new Paciente(nombre, telefono, dni, mail);
 
-		pacientes.put(paciente.getId(), paciente);
+		pacientes.add(paciente);
 
 		registrarVisita(paciente, new Date(), prestaciones);
 	}
 
 	public void ingresoPaciente(Integer id, String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
-		Paciente paciente = pacientes.get(id);
+		Paciente paciente = pacientes.contains(o).get(id);
 
 		paciente.actualizarDatos(nombre, telefono, dni, mail);
 
@@ -76,5 +78,9 @@ public class Laboratorio {
         	Prestacion prestacion = info.getKey();
         	prestacion.setResultado(resultado);
         }
+	}
+	
+	public String mostrarResultados(){
+		//pacientes.iterator()
 	}
 }
