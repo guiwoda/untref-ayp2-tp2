@@ -1,3 +1,5 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Prestacion implements Comparable<Prestacion> {
@@ -61,6 +63,11 @@ public class Prestacion implements Comparable<Prestacion> {
 
 	public Resultado getResultado() {
 		return resultado;
+	}
+	
+	public String getFechaEnString(){
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        return formatter.format(fecha);
 	}
 
 }

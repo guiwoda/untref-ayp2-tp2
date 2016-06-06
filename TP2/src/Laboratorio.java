@@ -80,14 +80,20 @@ public class Laboratorio {
 	public String mostrarResultados(){
 		StringBuilder builder = new StringBuilder();
 
-		Iterator iterador = pacientes.iterator();
+		Iterator<Paciente> iterador = pacientes.iterator();
 		while (iterador.hasNext()){
 			Paciente paciente = (Paciente)iterador.next();
+			builder
+			.append(paciente.getNombre())
+			.append("\n");
+			
 			List<Prestacion> prestaciones = paciente.getPrestaciones();
-			Iterator iteradorPrestaciones = prestaciones.iterator();
+			Iterator<Prestacion> iteradorPrestaciones = prestaciones.iterator();
 			while (iteradorPrestaciones.hasNext()){
 				Prestacion prestacion = (Prestacion)iteradorPrestaciones.next();
 				builder
+				.append(prestacion.getFechaEnString())
+				.append("\n")
 				.append(prestacion.toString())
 				.append("\n");
 			}

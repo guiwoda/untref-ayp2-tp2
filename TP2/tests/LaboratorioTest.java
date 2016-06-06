@@ -1,18 +1,19 @@
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Before;
+import org.junit.Test;
+
 public class LaboratorioTest {
 	private Laboratorio laboratorio = new Laboratorio();
+	private TipoPrestacion[] tipoPrestaciones = new TipoPrestacion[5];
 
-	@Test
-	public void testEstadistica() {
-		TipoPrestacion[] tipoPrestaciones = new TipoPrestacion[5];
+	@Before
+	public void setup(){
 
 		for(int i = 0; i < 5; i++) {
 			String s = String.valueOf(i + 1);
@@ -27,7 +28,7 @@ public class LaboratorioTest {
 		laboratorio.ingresoPaciente("José", 45678665, DNI.masculino(34567890), "jose@untref.edu.ar", tipoPrestaciones);
 		laboratorio.ingresoPaciente("Karina", 45658765, DNI.femenino(33567890), "karina@untref.edu.ar", tipoPrestaciones);
 		laboratorio.ingresoPaciente("Juana", 45671765, DNI.femenino(34167890), "juana@untref.edu.ar", tipoPrestaciones);
-
+		
 		Map<Prestacion, Integer> resultadosAnalisis = new HashMap<>();
 		Map<Prestacion, Boolean> resultadosEstudios = new HashMap<>();
 
@@ -50,6 +51,12 @@ public class LaboratorioTest {
 		laboratorio.ingresarResultadosAnalisis(resultadosAnalisis);
 		laboratorio.ingresarResultadosPorEstudio(resultadosEstudios);
 
+	}
+	
+	@Test
+	public void testEstadistica() {
+		
+		
 		String result = laboratorio.estadistica(new Date(1462060800), new Date());
 
 		assertEquals("Analisis 2: \n" +
@@ -81,5 +88,10 @@ public class LaboratorioTest {
 			result);
 
 		System.out.println(result);
+	}
+	
+	@Test
+	public void testMostrarResultados(){
+		assertEquals("", laboratorio.mostrarResultados());
 	}
 }
