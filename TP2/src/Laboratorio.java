@@ -1,10 +1,10 @@
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class Laboratorio {
 
@@ -81,6 +81,29 @@ public class Laboratorio {
 	}
 	
 	public String mostrarResultados(){
-		//pacientes.iterator()
+		StringBuilder builder = new StringBuilder();
+		
+		Iterator iterador = pacientes.iterator();
+		while (iterador.hasNext()){
+			Paciente paciente = (Paciente)iterador.next();
+			List<Prestacion> prestaciones = paciente.getPrestaciones();
+			Iterator iteradorPrestaciones = prestaciones.iterator();
+			while (iteradorPrestaciones.hasNext()){
+				Prestacion prestacion = (Prestacion)iteradorPrestaciones.next();
+				builder
+				.append(prestacion.toString())
+				.append("\n");
+			}
+		}
+		
+
+//		for (TipoPrestacion prestacion : prestaciones) {
+//			builder
+//				.append("  ")
+//				.append(prestacion.mostrar(resultados.getResultado(prestacion)))
+//				.append("\n");
+//		}
+		
+		return builder.toString();
 	}
 }
