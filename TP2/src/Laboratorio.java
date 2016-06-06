@@ -95,15 +95,6 @@ public class Laboratorio {
 				.append("\n");
 			}
 		}
-		
-
-//		for (TipoPrestacion prestacion : prestaciones) {
-//			builder
-//				.append("  ")
-//				.append(prestacion.mostrar(resultados.getResultado(prestacion)))
-//				.append("\n");
-//		}
-		
 		return builder.toString();
 	}
 }
