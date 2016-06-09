@@ -84,6 +84,7 @@ public class Laboratorio {
 		while (iterador.hasNext()){
 			Paciente paciente = (Paciente)iterador.next();
 			builder
+			.append("\n")
 			.append(paciente.getNombre())
 			.append("\n");
 			

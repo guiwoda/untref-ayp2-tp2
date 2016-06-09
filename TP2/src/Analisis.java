@@ -24,9 +24,8 @@ public class Analisis extends TipoPrestacion {
 	
 
 	public String mostrar(Resultado resultado) {
-		//Me obliga a hacer downcasting si quiero usar el metodo especifico
 		return  "Analisis: " + nombre + " " + ((ResultadoAnalisis) resultado).evaluarNormalidad(valorNormalMinimo, valorNormalMaximo)
-				+ " en el rango de valores " + this.valorNormalMinimo.toString() + " - "
+				+ " " + ((ResultadoAnalisis) resultado).getValorMedido() + " en el rango de valores " + this.valorNormalMinimo.toString() + " - "
 				+ this.valorNormalMaximo.toString();
 	}
 
