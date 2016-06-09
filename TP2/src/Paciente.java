@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class Paciente {
+public class Paciente implements Comparable<Paciente> {
 	private static Integer lastId = 0;
 
 	private Integer id;
@@ -31,8 +31,23 @@ public class Paciente {
 		return prestaciones;
 	}
 
-	public Boolean compareTo(Paciente other) {
-		return (this.id.equals(other.id));
+	public int compareTo(Paciente other) {
+		return this.nombre.compareTo(other.nombre);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Paciente paciente = (Paciente) o;
+
+		return id != null ? id.equals(paciente.id) : paciente.id == null;
+	}
+
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
 	}
 
 	public Integer getId() {

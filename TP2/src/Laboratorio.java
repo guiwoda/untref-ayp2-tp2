@@ -1,16 +1,10 @@
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Laboratorio {
 	private static Laboratorio instance = new Laboratorio();
 
-	private Set<Paciente> pacientes = new HashSet<>();
-	private Map<String, TipoPrestacion>	estudios = new TreeMap<>();
+	private Set<Paciente> pacientes = new TreeSet<>();
+	private Map<String, TipoPrestacion> estudios = new TreeMap<>();
 
 	private Laboratorio(){}
 

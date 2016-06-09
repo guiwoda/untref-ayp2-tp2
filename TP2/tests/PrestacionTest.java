@@ -24,7 +24,7 @@ public class PrestacionTest {
 	@Test
 	public void seteoResultadoConAnalisisEImprimoPantalla() {
 		prestacion.setResultado(resultado);
-		assertEquals("Analisis: glucemia Normal en el rango de valores 10 - 100", prestacion.toString());
+		assertEquals("Analisis: glucemia Normal 20 en el rango de valores 10 - 100", prestacion.toString());
 	}
 
 	@Test

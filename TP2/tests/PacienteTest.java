@@ -27,10 +27,10 @@ public class PacienteTest {
 	
 	@Test
 	public void losPacientesSeComparan(){
-		assertTrue(pacienteLali.compareTo(pacienteLali));
-		assertTrue(pacienteJuan.compareTo(pacienteJuan));
-		assertFalse(pacienteLali.compareTo(pacienteJuan));
-		assertFalse(pacienteLali.compareTo(pacienteJuan));
+		assertEquals(0, pacienteLali.compareTo(pacienteLali));
+		assertEquals(0, pacienteJuan.compareTo(pacienteJuan));
+		assertTrue(pacienteLali.compareTo(pacienteJuan) > 0);
+		assertTrue(pacienteJuan.compareTo(pacienteLali) < 0);
 	}
 
 	@Test

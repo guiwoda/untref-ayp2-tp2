@@ -94,53 +94,53 @@ public class LaboratorioTest {
 	public void testMostrarResultados(){
 		assertEquals(
 			"\n" +
-			"José\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 2 Anormal 200 en el rango de valores 1 - 11\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 4 Anormal 400 en el rango de valores 3 - 13\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
-			"\n" +
-			"Juana\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 2 Anormal 400 en el rango de valores 1 - 11\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 4 Anormal 600 en el rango de valores 3 - 13\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
-			"\n" +
-			"Karina\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 2 Anormal 300 en el rango de valores 1 - 11\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 4 Anormal 500 en el rango de valores 3 - 13\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n" +
-			"\n" +
-			"Pepe\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 2 Anormal 100 en el rango de valores 1 - 11\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
-			"08/06/2016\n" +
-			"Analisis: Analisis 4 Anormal 300 en el rango de valores 3 - 13\n" +
-			"08/06/2016\n" +
-			"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n",
+				"José\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 2 Anormal 200 en el rango de valores 1 - 11\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 4 Anormal 400 en el rango de valores 3 - 13\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
+				"\n" +
+				"Juana\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 2 Anormal 400 en el rango de valores 1 - 11\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 4 Anormal 600 en el rango de valores 3 - 13\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
+				"\n" +
+				"Karina\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 2 Anormal 300 en el rango de valores 1 - 11\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 4 Anormal 500 en el rango de valores 3 - 13\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n" +
+				"\n" +
+				"Pepe\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 2 Anormal 100 en el rango de valores 1 - 11\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
+				"09/06/2016\n" +
+				"Analisis: Analisis 4 Anormal 300 en el rango de valores 3 - 13\n" +
+				"09/06/2016\n" +
+				"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n",
 			laboratorio.mostrarResultados());
 	}
 }
