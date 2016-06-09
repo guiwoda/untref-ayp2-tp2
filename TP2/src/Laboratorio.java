@@ -7,8 +7,16 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class Laboratorio {
+	private static Laboratorio instance = new Laboratorio();
+
 	private Set<Paciente> pacientes = new HashSet<>();
 	private Map<String, TipoPrestacion>	estudios = new TreeMap<>();
+
+	private Laboratorio(){}
+
+	public static Laboratorio getInstance() {
+		return instance;
+	}
 
 	public void ingresoPaciente(String nombre, Integer telefono, DNI dni, String mail, TipoPrestacion[] prestaciones) {
 		ingreso(new Paciente(nombre, telefono, dni, mail), prestaciones);

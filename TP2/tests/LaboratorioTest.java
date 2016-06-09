@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LaboratorioTest {
-	private Laboratorio laboratorio = new Laboratorio();
+	private Laboratorio laboratorio = Laboratorio.getInstance();
 	private TipoPrestacion[] tipoPrestaciones = new TipoPrestacion[5];
 
 	@Before
@@ -28,7 +28,7 @@ public class LaboratorioTest {
 		laboratorio.ingresoPaciente("José", 45678665, DNI.masculino(34567890), "jose@untref.edu.ar", tipoPrestaciones);
 		laboratorio.ingresoPaciente("Karina", 45658765, DNI.femenino(33567890), "karina@untref.edu.ar", tipoPrestaciones);
 		laboratorio.ingresoPaciente("Juana", 45671765, DNI.femenino(34167890), "juana@untref.edu.ar", tipoPrestaciones);
-		
+
 		Map<Prestacion, Integer> resultadosAnalisis = new HashMap<>();
 		Map<Prestacion, Boolean> resultadosEstudios = new HashMap<>();
 
@@ -52,11 +52,11 @@ public class LaboratorioTest {
 		laboratorio.ingresarResultadosPorEstudio(resultadosEstudios);
 
 	}
-	
+
 	@Test
 	public void testEstadistica() {
-		
-		
+
+
 		String result = laboratorio.estadistica(new Date(1462060800), new Date());
 
 		assertEquals("Analisis 2: \n" +
@@ -89,11 +89,11 @@ public class LaboratorioTest {
 
 		System.out.println(result);
 	}
-	
+
 	@Test
 	public void testMostrarResultados(){
 		assertEquals(
-			"\n" + 
+			"\n" +
 			"José\n" +
 			"08/06/2016\n" +
 			"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
