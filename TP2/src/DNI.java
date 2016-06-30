@@ -32,14 +32,14 @@ public class DNI {
 	}
 
 	public boolean isMasculino() {
-		return sexo == MASCULINO;
+		return sexo.equals(MASCULINO);
 	}
 
 	public boolean isFemenino() {
-		return sexo == FEMENINO;
+		return sexo.equals(FEMENINO);
 	}
 	
-	public boolean equals(DNI dniAComparar){
-		return (this.getNumero() == dniAComparar.getNumero()) && (this.sexo == dniAComparar.getSexo());
+	public boolean equals(DNI otro){
+		return (this.getNumero() == otro.getNumero()) && (this.sexo.equals(otro.getSexo()));
 	}
 }
