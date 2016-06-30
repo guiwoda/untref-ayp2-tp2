@@ -44,6 +44,7 @@ public class GrupoEstudios extends TipoPrestacion {
 			prestacionesPorTipo.get(prestacion.getTipoPrestacion()).add(prestacion);
 		}
 
+		builder.append(nombre).append(":\n");
 		for (TipoPrestacion tipo : subestudios) {
 			builder.append(tipo.getEstadisticas(prestacionesPorTipo.get(tipo))).append("\n");
 		}
