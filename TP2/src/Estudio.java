@@ -12,12 +12,6 @@ public abstract class Estudio extends TipoPrestacion {
 		return indicaciones;
 	}
 
-	public void cargarResultado(ResultadoEstudio resultado) {
-		for (Prestacion prestacion : prestaciones) {
-			prestacion.setResultado(resultado);
-		}
-	}
-
 	@Override
 	public String getEstadisticas(List<Prestacion> prestaciones) {
 		StringBuilder result = new StringBuilder();
