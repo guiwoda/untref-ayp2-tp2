@@ -12,13 +12,6 @@ public abstract class Estudio extends TipoPrestacion {
 		return indicaciones;
 	}
 	
-	//Definir si en el Nombre va a aparecer que tipo de estudio es
-//	public String mostrar(Resultado resultado){
-//		return "Estudio: " + nombre + " " 
-//				+ ((ResultadoEstudio) resultado).evaluarNormalidad() 
-//				+ " " + indicaciones;
-//	}
-
 	public void cargarResultado(ResultadoEstudio resultado){
 		for (Prestacion prestacion : prestaciones){
 			prestacion.setResultado(resultado);
