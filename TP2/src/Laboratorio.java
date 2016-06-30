@@ -40,8 +40,7 @@ public class Laboratorio {
 			Prestacion prestacion = new Prestacion(tipo, paciente, fecha);
 			tipoPrestacion.addPrestacion(prestacion);
 			paciente.agregarPrestacion(prestacion);
-			// prestaciones pendientes? -> dentro del paciente?
-			
+
 		}
 	}
 

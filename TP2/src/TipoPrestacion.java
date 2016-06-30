@@ -14,8 +14,7 @@ public abstract class TipoPrestacion {
 	public TipoPrestacion(String nombre) {
 		this.id = ++lastId;
 		this.nombre = nombre;
-		//LinkedList porque es mas rapido para agregar/borrar en posicion intermedia
-		this.prestaciones= new LinkedList<Prestacion>();
+		this.prestaciones = new LinkedList<Prestacion>();
 	}
 	
 	public Integer getId() {
