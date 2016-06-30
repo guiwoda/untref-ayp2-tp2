@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -92,55 +93,57 @@ public class LaboratorioTest {
 
 	@Test
 	public void testMostrarResultados(){
+		String today = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+
 		assertEquals(
+			"José\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
+			today + "\n" +
+			"Analisis: Analisis 2 Anormal 200 en el rango de valores 1 - 11\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
+			today + "\n" +
+			"Analisis: Analisis 4 Anormal 400 en el rango de valores 3 - 13\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
 			"\n" +
-				"José\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 2 Anormal 200 en el rango de valores 1 - 11\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 4 Anormal 400 en el rango de valores 3 - 13\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
-				"\n" +
-				"Juana\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 2 Anormal 400 en el rango de valores 1 - 11\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 4 Anormal 600 en el rango de valores 3 - 13\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
-				"\n" +
-				"Karina\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 2 Anormal 300 en el rango de valores 1 - 11\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 4 Anormal 500 en el rango de valores 3 - 13\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n" +
-				"\n" +
-				"Pepe\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 2 Anormal 100 en el rango de valores 1 - 11\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
-				"09/06/2016\n" +
-				"Analisis: Analisis 4 Anormal 300 en el rango de valores 3 - 13\n" +
-				"09/06/2016\n" +
-				"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n",
+			"Juana\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 1 Anormal Indicaciones para estudio 1\n" +
+			today + "\n" +
+			"Analisis: Analisis 2 Anormal 400 en el rango de valores 1 - 11\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 3 Anormal Indicaciones para estudio 3\n" +
+			today + "\n" +
+			"Analisis: Analisis 4 Anormal 600 en el rango de valores 3 - 13\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 5 Anormal Indicaciones para estudio 5\n" +
+			"\n" +
+			"Karina\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
+			today + "\n" +
+			"Analisis: Analisis 2 Anormal 300 en el rango de valores 1 - 11\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
+			today + "\n" +
+			"Analisis: Analisis 4 Anormal 500 en el rango de valores 3 - 13\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n" +
+			"\n" +
+			"Pepe\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 1 Normal Indicaciones para estudio 1\n" +
+			today + "\n" +
+			"Analisis: Analisis 2 Anormal 100 en el rango de valores 1 - 11\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 3 Normal Indicaciones para estudio 3\n" +
+			today + "\n" +
+			"Analisis: Analisis 4 Anormal 300 en el rango de valores 3 - 13\n" +
+			today + "\n" +
+			"Estudio Cardiológico: Estudio 5 Normal Indicaciones para estudio 5\n" +
+			"\n",
 			laboratorio.mostrarResultados());
 	}
 }

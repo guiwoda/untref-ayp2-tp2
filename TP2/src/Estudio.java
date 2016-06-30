@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 
 public abstract class Estudio extends TipoPrestacion {
 	protected String indicaciones;
@@ -19,7 +20,7 @@ public abstract class Estudio extends TipoPrestacion {
 	}
 
 	@Override
-	public String getEstadisticas(Date inicio, Date fin) {
+	public String getEstadisticas(List<Prestacion> prestaciones) {
 		StringBuilder result = new StringBuilder();
 
 		result.append(nombre).append(": ").append("\n");
@@ -27,7 +28,7 @@ public abstract class Estudio extends TipoPrestacion {
 		int cantidad = 0;
 		int normales = 0;
 
-		for (Prestacion prestacion : getPrestacionesEntre(inicio, fin)) {
+		for (Prestacion prestacion : prestaciones) {
 			ResultadoEstudio resultado = (ResultadoEstudio) prestacion.getResultado();
 
 			if (resultado == null){

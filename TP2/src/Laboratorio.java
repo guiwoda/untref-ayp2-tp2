@@ -49,7 +49,9 @@ public class Laboratorio {
 		StringBuilder result = new StringBuilder();
 
 		for (TipoPrestacion tipo : estudios.values()) {
-			result.append(tipo.getEstadisticas(inicio, fin)).append("\n");
+			result.append(
+				tipo.getEstadisticas(tipo.getPrestacionesEntre(inicio, fin))
+			).append("\n");
 		}
 
 		return result.toString();
@@ -82,24 +84,16 @@ public class Laboratorio {
 	public String mostrarResultados(){
 		StringBuilder builder = new StringBuilder();
 
-		Iterator<Paciente> iterador = pacientes.iterator();
-		while (iterador.hasNext()){
-			Paciente paciente = (Paciente)iterador.next();
-			builder
-			.append("\n")
-			.append(paciente.getNombre())
-			.append("\n");
+		for (Paciente paciente : pacientes) {
+			builder.append(paciente.getNombre()).append("\n");
 			
-			List<Prestacion> prestaciones = paciente.getPrestaciones();
-			Iterator<Prestacion> iteradorPrestaciones = prestaciones.iterator();
-			while (iteradorPrestaciones.hasNext()){
-				Prestacion prestacion = (Prestacion)iteradorPrestaciones.next();
+			for (Prestacion prestacion : paciente.getPrestaciones()) {
 				builder
-				.append(prestacion.getFechaEnString())
-				.append("\n")
-				.append(prestacion.toString())
-				.append("\n");
+					.append(prestacion.getFecha()).append("\n")
+					.append(prestacion.toString()).append("\n");
 			}
+
+			builder.append("\n");
 		}
 		return builder.toString();
 	}

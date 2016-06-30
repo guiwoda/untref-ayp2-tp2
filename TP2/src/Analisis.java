@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 
 public class Analisis extends TipoPrestacion {
 
@@ -35,7 +36,7 @@ public class Analisis extends TipoPrestacion {
 		}
 	}
     @Override
-    public String getEstadisticas(Date inicio, Date fin) {
+    public String getEstadisticas(List<Prestacion> prestaciones) {
         StringBuilder result = new StringBuilder();
 
         result.append(nombre).append(": ").append("\n");
@@ -45,7 +46,7 @@ public class Analisis extends TipoPrestacion {
         int max = Integer.MIN_VALUE;
         int sum = 0;
 
-        for (Prestacion prestacion : getPrestacionesEntre(inicio, fin)) {
+        for (Prestacion prestacion : prestaciones) {
             ResultadoAnalisis resultado = (ResultadoAnalisis) prestacion.getResultado();
 
             if (resultado == null) {

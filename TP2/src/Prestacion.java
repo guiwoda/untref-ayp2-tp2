@@ -65,7 +65,7 @@ public class Prestacion implements Comparable<Prestacion> {
 		return resultado;
 	}
 	
-	public String getFechaEnString(){
+	public String getFecha(){
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         return formatter.format(fecha);
 	}

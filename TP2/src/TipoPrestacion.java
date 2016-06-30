@@ -35,7 +35,7 @@ public abstract class TipoPrestacion {
 		return getNombre();	
 	}
 
-	abstract public String getEstadisticas(Date inicio, Date fin);
+	abstract public String getEstadisticas(List<Prestacion> prestaciones);
 
 	public List<Prestacion> getPrestaciones() {
 		return prestaciones;
