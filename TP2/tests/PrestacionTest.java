@@ -1,21 +1,21 @@
-import static org.junit.Assert.*;
-
-import java.util.Date;
-
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
+import static org.junit.Assert.*;
+
 public class PrestacionTest {
-	private Prestacion	prestacion;
-	private Analisis	analisis;
-	private Paciente	paciente	= new Paciente("Estefania Diaz", 46759087, DNI.masculino(33456987), "mail@mail.com");
-	private Date		fecha		= new Date();
-	private Resultado	resultado;
+	private Prestacion prestacion;
+	private Analisis analisis;
+	private Paciente paciente = new Paciente("Estefania Diaz", 46759087, DNI.masculino(33456987), "mail@mail.com");
+	private Date fecha = new Date();
+	private Resultado resultado;
 
 	@Before
 	public void inicializoPrestacionConAnalisis() {
 		// creo Prestacion con TipoPrestacion Analisis
-		analisis	= new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
+		analisis = new Analisis("glucemia", 10, 100, "Con globulos en estado critico.");
 		prestacion = new Prestacion(analisis, paciente, fecha);
 		resultado = new ResultadoAnalisis(20);
 
@@ -44,7 +44,7 @@ public class PrestacionTest {
 
 		EstudioCardiologico estudio = new EstudioCardiologico("electrocardiograma", "ninguna.");
 		Prestacion otra = new Prestacion(estudio, paciente, fecha);
-		
+
 		assertFalse(prestacion.equals(otra));
 	}
 }

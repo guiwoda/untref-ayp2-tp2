@@ -1,9 +1,8 @@
-import java.util.Date;
 import java.util.List;
 
 public abstract class Estudio extends TipoPrestacion {
 	protected String indicaciones;
-	
+
 	public Estudio(String nombre, String indicaciones) {
 		super(nombre);
 		this.indicaciones = indicaciones;
@@ -12,9 +11,9 @@ public abstract class Estudio extends TipoPrestacion {
 	public String getIndicaciones() {
 		return indicaciones;
 	}
-	
-	public void cargarResultado(ResultadoEstudio resultado){
-		for (Prestacion prestacion : prestaciones){
+
+	public void cargarResultado(ResultadoEstudio resultado) {
+		for (Prestacion prestacion : prestaciones) {
 			prestacion.setResultado(resultado);
 		}
 	}
@@ -31,7 +30,7 @@ public abstract class Estudio extends TipoPrestacion {
 		for (Prestacion prestacion : prestaciones) {
 			ResultadoEstudio resultado = (ResultadoEstudio) prestacion.getResultado();
 
-			if (resultado == null){
+			if (resultado == null) {
 				continue;
 			}
 

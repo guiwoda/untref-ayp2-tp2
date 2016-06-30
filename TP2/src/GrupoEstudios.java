@@ -1,32 +1,35 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GrupoEstudios extends TipoPrestacion {
 	private List<TipoPrestacion> subestudios;
-	
+
 	public GrupoEstudios(String nombre, List<TipoPrestacion> subestudios) {
 		super(nombre);
-		
+
 		this.subestudios = subestudios;
 	}
-	
+
 	public String mostrar(Resultado resultado) {
-		if (! (resultado instanceof ResultadoGrupoEstudios)) {
+		if (!(resultado instanceof ResultadoGrupoEstudios)) {
 			throw new RuntimeException("Un grupo de estudios debe tener un grupo de resultados.");
 		}
-		
+
 		ResultadoGrupoEstudios resultados = (ResultadoGrupoEstudios) resultado;
-		
+
 		StringBuilder builder = new StringBuilder();
-		
+
 		builder.append(nombre).append("\n");
-		
+
 		for (TipoPrestacion subestudio : subestudios) {
 			builder
 				.append("  ")
 				.append(subestudio.mostrar(resultados.getResultado(subestudio)))
 				.append("\n");
 		}
-		
+
 		return builder.toString();
 	}
 

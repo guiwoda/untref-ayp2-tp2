@@ -3,9 +3,9 @@ public class EstudioRadiologico extends Estudio {
 		super(nombre, indicaciones);
 	}
 
-	public String mostrar(Resultado resultado){
-		return "Estudio Radiologico: " + nombre + " " 
-			+ ((ResultadoEstudio) resultado).evaluarNormalidad() 
+	public String mostrar(Resultado resultado) {
+		return "Estudio Radiologico: " + nombre + " "
+			+ ((ResultadoEstudio) resultado).evaluarNormalidad()
 			+ " " + indicaciones;
 	}
 }

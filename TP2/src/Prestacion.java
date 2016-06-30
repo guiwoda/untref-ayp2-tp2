@@ -4,24 +4,20 @@ import java.util.Date;
 
 public class Prestacion implements Comparable<Prestacion> {
 	private static int lastId = 0;
-	
+
 	private int id;
 	private TipoPrestacion tipo;
 	private Paciente paciente;
 	private Date fecha;
 	private Resultado resultado;
-	
+
 	public Prestacion(TipoPrestacion tipo, Paciente paciente, Date fecha) {
 		this.id = ++lastId;
 		this.tipo = tipo;
 		this.paciente = paciente;
 		this.fecha = fecha;
 	}
-	
-	public void setResultado(Resultado resultado) {
-		this.resultado = resultado;
-	}
-	
+
 	public String toString() {
 		return this.tipo.mostrar(this.resultado);
 	}
@@ -41,19 +37,19 @@ public class Prestacion implements Comparable<Prestacion> {
 		if (this == obj) {
 			return true;
 		}
-		
+
 		if (obj == null || getClass() != obj.getClass()) {
 			return false;
 		}
-		
+
 		return equals((Prestacion) obj);
 	}
-	
+
 	public boolean equals(Prestacion other) {
 		return id == other.id;
 	}
 
-	public TipoPrestacion getTipoPrestacion(){
+	public TipoPrestacion getTipoPrestacion() {
 		return this.tipo;
 	}
 
@@ -64,10 +60,14 @@ public class Prestacion implements Comparable<Prestacion> {
 	public Resultado getResultado() {
 		return resultado;
 	}
-	
-	public String getFecha(){
+
+	public void setResultado(Resultado resultado) {
+		this.resultado = resultado;
+	}
+
+	public String getFecha() {
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        return formatter.format(fecha);
+		return formatter.format(fecha);
 	}
 
 }

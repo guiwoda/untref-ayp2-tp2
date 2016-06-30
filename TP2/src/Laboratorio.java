@@ -6,7 +6,8 @@ public class Laboratorio {
 	private Set<Paciente> pacientes = new TreeSet<>();
 	private Map<String, TipoPrestacion> estudios = new TreeMap<>();
 
-	private Laboratorio(){}
+	private Laboratorio() {
+	}
 
 	public static Laboratorio getInstance() {
 		return instance;
@@ -32,7 +33,7 @@ public class Laboratorio {
 	public void registrarVisita(Paciente paciente, Date fecha, TipoPrestacion[] prestaciones) {
 		for (TipoPrestacion tipo : prestaciones) {
 			//si no tengo el TipoPrestacion ya cargado. Decision de diseño: poder dar de alta prestaiones
-			if(!estudios.containsKey(tipo.getNombre())){
+			if (!estudios.containsKey(tipo.getNombre())) {
 				estudios.put(tipo.getNombre(), tipo);
 			}
 
@@ -55,37 +56,37 @@ public class Laboratorio {
 
 		return result.toString();
 	}
-	
-	public void ingresarResultadosPorEstudio(Map<Prestacion, Boolean> informacionResultados){
+
+	public void ingresarResultadosPorEstudio(Map<Prestacion, Boolean> informacionResultados) {
 
 		Set<Map.Entry<Prestacion, Boolean>> informacionResultado = informacionResultados.entrySet();
 
-	        for (Map.Entry<Prestacion, Boolean> info : informacionResultado) {
-	        	Boolean esNormal = info.getValue();
-	        	ResultadoEstudio resultado = new ResultadoEstudio(esNormal);
-	        	Prestacion prestacion = info.getKey();
-	        	prestacion.setResultado(resultado);
-	        }
+		for (Map.Entry<Prestacion, Boolean> info : informacionResultado) {
+			Boolean esNormal = info.getValue();
+			ResultadoEstudio resultado = new ResultadoEstudio(esNormal);
+			Prestacion prestacion = info.getKey();
+			prestacion.setResultado(resultado);
+		}
 	}
-	
+
 	public void ingresarResultadosAnalisis(Map<Prestacion, Integer> informacionResultados) {
 
 		Set<Map.Entry<Prestacion, Integer>> informacionResultado = informacionResultados.entrySet();
 
-        for (Map.Entry<Prestacion, Integer> info : informacionResultado) {
-        	Integer valorMedido = info.getValue();
-        	ResultadoAnalisis resultado = new ResultadoAnalisis(valorMedido);
-        	Prestacion prestacion = info.getKey();
-        	prestacion.setResultado(resultado);
-        }
+		for (Map.Entry<Prestacion, Integer> info : informacionResultado) {
+			Integer valorMedido = info.getValue();
+			ResultadoAnalisis resultado = new ResultadoAnalisis(valorMedido);
+			Prestacion prestacion = info.getKey();
+			prestacion.setResultado(resultado);
+		}
 	}
-	
-	public String mostrarResultados(){
+
+	public String mostrarResultados() {
 		StringBuilder builder = new StringBuilder();
 
 		for (Paciente paciente : pacientes) {
 			builder.append(paciente.getNombre()).append("\n");
-			
+
 			for (Prestacion prestacion : paciente.getPrestaciones()) {
 				builder
 					.append(prestacion.getFecha()).append("\n")

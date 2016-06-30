@@ -4,19 +4,19 @@ import java.util.List;
 
 public abstract class TipoPrestacion {
 	private static int lastId = 0;
-	
+
 	protected Integer id;
 	protected String nombre;
 	protected List<Prestacion> prestaciones;
-	
-	abstract public String mostrar(Resultado resultado);
-	
+
 	public TipoPrestacion(String nombre) {
 		this.id = ++lastId;
 		this.nombre = nombre;
 		this.prestaciones = new LinkedList<Prestacion>();
 	}
-	
+
+	abstract public String mostrar(Resultado resultado);
+
 	public Integer getId() {
 		return id;
 	}
@@ -30,8 +30,8 @@ public abstract class TipoPrestacion {
 	}
 
 	@Override
-	public String toString(){
-		return getNombre();	
+	public String toString() {
+		return getNombre();
 	}
 
 	abstract public String getEstadisticas(List<Prestacion> prestaciones);
